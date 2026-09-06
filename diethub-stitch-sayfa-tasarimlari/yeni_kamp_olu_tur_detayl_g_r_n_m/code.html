@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yeni Kamp Oluştur - DietHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#615e57",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "primary-container": "#2d4f3d",
+                        "on-tertiary-container": "#afb9b4",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#67645c",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-surface": "#1b1c1c",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-secondary-fixed-variant": "#494740",
+                        "inverse-surface": "#303030",
+                        "primary": "#163827",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "surface-tint": "#436652",
+                        "outline": "#727973",
+                        "background": "#fbf9f8",
+                        "on-background": "#1b1c1c",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "on-primary-container": "#9ac0a9",
+                        "inverse-primary": "#a9cfb8",
+                        "secondary-container": "#e7e2d8",
+                        "tertiary-fixed": "#dbe5df",
+                        "primary-fixed": "#c5ecd3",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c1c8c1",
+                        "tertiary-container": "#414a46",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-surface-variant": "#414843",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-bright": "#fbf9f8",
+                        "on-primary-fixed": "#002113",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); font-family: 'Inter', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .shadow-card {
+            box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05);
+        }
+        
+        /* Modern Input Styling */
+        .input-clinical {
+            background-color: #F5F0E6;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .input-clinical:focus {
+            background-color: #FFFFFF;
+            border-color: #2D4F3D;
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface dark:bg-surface-dim fixed left-0 top-0 h-screen w-[280px] flex-col py-lg px-md z-50 shadow-[1px_0_0_0_#F5F0E6]">
+<div class="mb-lg px-sm">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tight">DietHub</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Professional Suite</p>
+</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md font-medium">Overview</span>
+</a>
+</li>
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md font-medium">Clients</span>
+</a>
+</li>
+<!-- Active -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary dark:text-primary-fixed dark:border-primary-fixed bg-surface-container-low transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-body-md text-body-md">Camps</span>
+</a>
+</li>
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-body-md text-body-md font-medium">Recipes</span>
+</a>
+</li>
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-body-md text-body-md font-medium">Messages</span>
+</a>
+</li>
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-body-md text-body-md font-medium">Check-ins</span>
+</a>
+</li>
+<!-- Inactive -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-body-md text-body-md font-medium">Notifications</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary py-sm rounded-lg font-label-md hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                Add New Client
+            </button>
+<a class="mt-sm flex items-center gap-md px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-[280px] flex flex-col h-screen overflow-hidden bg-background">
+<!-- TopAppBar -->
+<header class="bg-surface-bright dark:bg-surface flex justify-between items-center px-xl py-md w-full z-40">
+<div class="flex items-center gap-sm">
+<!-- Mobile menu button (hidden on desktop) -->
+<button class="md:hidden text-on-surface-variant p-2 -ml-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative w-64 md:w-96 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="input-clinical w-full pl-10 pr-4 py-2 rounded-lg font-body-md text-body-md" placeholder="Danışan, kamp veya tarif ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile md:px-xl py-lg">
+<div class="max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Yeni Kamp Oluştur</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Danışanların için yeni bir beslenme programı oluştur.</p>
+</div>
+<!-- Bento Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column (Form & Builder) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Section 1: Camp Details Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-card">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Kamp Detayları</h3>
+<div class="flex flex-col gap-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs uppercase tracking-widest">Kamp Adı</label>
+<input class="input-clinical w-full px-4 py-3 rounded-lg font-body-md text-on-surface" placeholder="Örn: 21 Günlük Beslenme Kampı" type="text" value="21 Günlük Arınma"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs uppercase tracking-widest">Kamp Açıklaması</label>
+<textarea class="input-clinical w-full px-4 py-3 rounded-lg font-body-md text-on-surface resize-none" placeholder="Kampın amacı ve genel prensipleri..." rows="3">Bahar aylarına girerken vücudu yenilemek ve ödem atmak için tasarlanmış, antioksidan açısından zengin 21 günlük program.</textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs uppercase tracking-widest">Başlangıç Tarihi</label>
+<div class="relative">
+<input class="input-clinical w-full px-4 py-3 rounded-lg font-body-md text-on-surface" type="date"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs uppercase tracking-widest">Süre (Gün)</label>
+<input class="input-clinical w-full px-4 py-3 rounded-lg font-body-md text-on-surface" type="number" value="21"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs uppercase tracking-widest">Danışan Seçimi</label>
+<div class="input-clinical w-full px-4 py-3 rounded-lg flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-on-surface">Tüm Aktif Danışanlar (48 Kişi)</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Daily Program Builder -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-card">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Günlük Program</h3>
+<button class="text-primary font-label-md flex items-center gap-xs hover:underline">
+<span class="material-symbols-outlined text-sm">content_copy</span> Günü Kopyala
+                                </button>
+</div>
+<!-- Day Selector Scroll -->
+<div class="flex gap-sm overflow-x-auto scrollbar-hide pb-sm mb-md border-b border-surface-container-high">
+<button class="shrink-0 px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md shadow-sm">1. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">2. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">3. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">4. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">5. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">6. Gün</button>
+<button class="shrink-0 px-4 py-2 rounded-full bg-surface text-on-surface-variant font-label-md hover:bg-surface-container transition-colors border border-surface-container-high">7. Gün</button>
+</div>
+<!-- Meals Area -->
+<div class="flex flex-col gap-md">
+<!-- Kahvaltı -->
+<div class="border border-surface-container-high rounded-lg p-sm relative group hover:border-primary-fixed-dim transition-colors">
+<div class="absolute -left-3 top-4 bg-surface-container-lowest px-2 py-1">
+<span class="font-label-sm text-secondary uppercase tracking-widest">Kahvaltı</span>
+</div>
+<div class="pl-md mt-sm flex flex-col gap-sm">
+<!-- Recipe Item -->
+<div class="flex justify-between items-start bg-[#F5F0E6] p-sm rounded-md">
+<div class="flex gap-sm">
+<div class="w-12 h-12 bg-white rounded flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-semibold">Badem Unlu Pankek</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Porsiyon: 2 adet</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+<!-- Dietitian Note -->
+<div class="bg-surface-container-low p-sm rounded-md border-l-2 border-primary-container">
+<span class="font-label-sm text-on-surface-variant block mb-1">Diyetisyen Notu</span>
+<input class="bg-transparent border-none w-full p-0 font-body-md text-sm text-on-surface focus:ring-0" placeholder="Not ekle..." type="text" value="Yanında şekersiz yeşil çay tercih edilebilir."/>
+</div>
+<!-- Actions -->
+<div class="flex gap-sm mt-2">
+<button class="text-primary font-label-md text-sm flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-xs">add</span> Tarif Ekle
+                                            </button>
+<button class="text-secondary font-label-md text-sm flex items-center gap-1 hover:underline ml-4">
+<span class="material-symbols-outlined text-xs">add</span> Alternatif Ekle
+                                            </button>
+</div>
+</div>
+</div>
+<!-- Ara Öğün -->
+<div class="border border-surface-container-high rounded-lg p-sm relative group hover:border-primary-fixed-dim transition-colors">
+<div class="absolute -left-3 top-4 bg-surface-container-lowest px-2 py-1">
+<span class="font-label-sm text-secondary uppercase tracking-widest">Ara Öğün</span>
+</div>
+<div class="pl-md mt-sm flex flex-col gap-sm">
+<div class="flex justify-between items-start bg-[#F5F0E6] p-sm rounded-md">
+<div class="flex gap-sm">
+<div class="w-12 h-12 bg-white rounded flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">local_cafe</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-semibold">Yeşil Çay &amp; Çiğ Badem</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Porsiyon: 1 Fincan / 10 Adet</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+<div class="flex gap-sm mt-2">
+<button class="text-primary font-label-md text-sm flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-xs">add</span> Tarif Ekle
+                                            </button>
+</div>
+</div>
+</div>
+<!-- Öğle (Placeholder) -->
+<div class="border border-dashed border-surface-container-highest rounded-lg p-md flex items-center justify-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<button class="text-on-surface-variant font-label-md flex flex-col items-center gap-xs">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+                                        Öğle Öğünü Ekle
+                                    </button>
+</div>
+<!-- Akşam (Placeholder) -->
+<div class="border border-dashed border-surface-container-highest rounded-lg p-md flex items-center justify-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<button class="text-on-surface-variant font-label-md flex flex-col items-center gap-xs">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+                                        Akşam Öğünü Ekle
+                                    </button>
+</div>
+<div class="flex justify-center mt-sm">
+<button class="text-secondary font-label-sm border border-surface-container-high rounded-full px-4 py-1 hover:bg-surface transition-colors">
+                                        + Yeni Öğün Vakti Ekle
+                                    </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Summary Sticky) -->
+<div class="lg:col-span-4 relative">
+<div class="sticky top-md flex flex-col gap-md">
+<!-- Kamp Özeti Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-card">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Kamp Özeti</h3>
+<div class="flex flex-col gap-sm border-b border-surface-container-high pb-md mb-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Adı</span>
+<span class="font-label-md font-semibold text-on-surface">21 Günlük Arınma</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Süre</span>
+<span class="font-label-md font-semibold text-on-surface">21 Gün</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Katılımcı</span>
+<span class="font-label-md font-semibold text-on-surface">48 Danışan</span>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center bg-[#F5F0E6] p-sm rounded">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span class="font-label-md">Toplam Tarif</span>
+</div>
+<span class="font-headline-md text-lg text-on-surface">12</span>
+</div>
+<div class="flex justify-between items-center bg-[#F5F0E6] p-sm rounded">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="font-label-md">Toplam Öğün</span>
+</div>
+<span class="font-headline-md text-lg text-on-surface">84</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-center hover:bg-primary transition-colors shadow-sm">
+                                    Kampı Yayınla
+                                </button>
+<button class="w-full bg-[#F5F0E6] text-primary-container py-3 rounded-lg font-label-md text-center hover:bg-surface-container-highest transition-colors">
+                                    Taslak Olarak Kaydet
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for bottom padding -->
+<div class="h-xl"></div>
+</main>
+</div>
+</body></html>

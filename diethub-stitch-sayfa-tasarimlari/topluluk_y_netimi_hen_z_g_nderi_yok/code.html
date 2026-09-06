@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Topluluk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c1c8c1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "secondary": "#615e57",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e7e2d8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "surface-tint": "#436652",
+                        "inverse-primary": "#a9cfb8",
+                        "primary-container": "#2d4f3d",
+                        "on-tertiary-fixed": "#151d1a",
+                        "surface-variant": "#e4e2e1",
+                        "outline": "#727973",
+                        "on-primary-fixed": "#002113",
+                        "on-primary-container": "#9ac0a9",
+                        "on-surface": "#1b1c1c",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "on-background": "#1b1c1c",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fbf9f8",
+                        "on-secondary-container": "#67645c",
+                        "primary-fixed": "#c5ecd3",
+                        "tertiary-container": "#414a46",
+                        "tertiary": "#2a3430",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary-fixed": "#dbe5df",
+                        "inverse-surface": "#303030",
+                        "primary": "#163827",
+                        "surface-container": "#f0eded",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-container": "#afb9b4",
+                        "background": "#fbf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "on-secondary-fixed": "#1d1c16"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #FAF9F6; }
+        .shadow-soft { box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05); }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-background min-h-screen flex">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex flex-col py-md px-sm border-r border-outline-variant dark:border-outline bg-surface-container-low dark:bg-surface-dim w-[280px] h-screen sticky left-0 top-0 flex-shrink-0 z-50">
+<!-- Header -->
+<div class="flex items-center gap-sm mb-xl px-sm">
+<img alt="Diyetisyen Profil Resmi" class="w-12 h-12 rounded-full object-cover shadow-soft" data-alt="A clean, minimalist 3D rendering of an abstract geometric avatar, composed of soft spheres and smooth rounded blocks in calm sage greens and creamy off-whites, representing a premium dietitian profile picture, high key lighting, smooth gradient background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyBg1HbeylIvwowJLwCgQvNGC3p98QF58YaRcwUYN8nWMt2o0s4vHml0jr4vF4xkQEV115fqJG-ioelKQHw1Pi8W4aJdDjZAyRmEpBh7OcWCaaARcKotea3izPGiUPpgWkI3p2Om0Ih4dqhiyVcQhTolxUQAEseczy_zRq4cTQ34cFuA9bp_Jtg0kKGA4YfKTyyTavAZ3iuf9228-oR0Dc9kVwe6GT2F9UWnBY25bjPWY8SzXa56Xr"/>
+<div>
+<h1 class="font-display-lg text-[24px] leading-8 text-primary dark:text-primary-fixed tracking-tight">DietHub</h1>
+<p class="font-label-sm text-label-sm text-secondary">Diyetisyen Paneli</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-xs flex-grow">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Danışanlar (Inactive) -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">groups</span>
+<span class="font-label-md text-label-md">Danışanlar</span>
+</a>
+<!-- Topluluk (Active) -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-primary dark:text-primary-fixed font-bold bg-surface dark:bg-surface-container-highest transition-transform scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-label-md text-label-md">Topluluk</span>
+</a>
+<!-- Programlar (Inactive) -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">calendar_today</span>
+<span class="font-label-md text-label-md">Programlar</span>
+</a>
+<!-- Ayarlar (Inactive) -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-label-md text-label-md">Ayarlar</span>
+</a>
+</div>
+<!-- CTA -->
+<button class="mt-auto w-full bg-primary-container text-on-primary rounded-lg py-sm px-md font-label-md text-label-md hover:opacity-90 transition-opacity">
+            Yeni Duyuru Paylaş
+        </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col min-w-0 bg-background">
+<!-- TopNavBar (Responsive) -->
+<header class="flex justify-between items-center px-margin-mobile md:px-xl w-full h-20 sticky top-0 z-40 bg-surface dark:bg-surface-dim shadow-sm dark:shadow-none flex-shrink-0">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Product Name -->
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed font-semibold tracking-tight hidden md:block">
+                Topluluk Yönetimi
+            </h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed font-semibold tracking-tight md:hidden">
+                Topluluk
+            </h2>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<img alt="Diyetisyen Profil" class="w-10 h-10 rounded-full object-cover shadow-soft ml-2 border-2 border-surface" data-alt="A clean, minimalist 3D rendering of an abstract geometric avatar, composed of soft spheres and smooth rounded blocks in calm sage greens and creamy off-whites, representing a premium dietitian profile picture, high key lighting, smooth gradient background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeFePHC7MQRqvXQOzbTBdGzuM2uPTPAsDTrXN8DButM8kSFuw6A0nptE6Mwp2bhTFe2Jrbtb7ekY8NNE9LOJ7Kiq1fe084s8fVZtV-WAinAvWt_ih04PmMdnOi1rWN8Qo5FpeUH6Y7mcacc9TLEy9mrLPlEDubuqjkLHcG2kiQP0pP4hGCwA0DknesQPBDTJ7SbDQ6Pu6gj_JbS644mjz5Duby9j8Ct2GZHfiW4r1J4wCArULnl_Kd"/>
+</div>
+</header>
+<!-- Empty State Canvas -->
+<div class="flex-grow flex items-center justify-center p-margin-mobile md:p-xl">
+<div class="max-w-md w-full bg-surface-container-lowest rounded-xl p-xl shadow-soft flex flex-col items-center text-center">
+<!-- Illustration/Icon Area -->
+<div class="w-32 h-32 rounded-full bg-surface-container-low flex items-center justify-center mb-lg relative">
+<!-- Subtle ambient ring -->
+<div class="absolute inset-0 rounded-full border border-primary-container opacity-10 scale-110"></div>
+<div class="absolute inset-0 rounded-full border border-primary-container opacity-5 scale-125"></div>
+<span class="material-symbols-outlined text-[64px] text-surface-tint opacity-80" style="font-variation-settings: 'FILL' 0;">
+                        forum
+                    </span>
+</div>
+<!-- Text Content -->
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">
+                    Henüz topluluk gönderisi bulunmuyor.
+                </h3>
+<p class="font-body-md text-body-md text-secondary">
+                    Danışanlarınız kamp içerisinde paylaşım yaptıkça gönderiler burada görünecek.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) - Suppression check: This is a top-level destination, so it should be visible on mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-container-high pb-safe flex justify-around items-center px-sm py-xs z-50">
+<a class="flex flex-col items-center p-sm text-secondary hover:text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-[10px] mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center p-sm text-secondary hover:text-primary" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-[10px] mt-1">Danışan</span>
+</a>
+<a class="flex flex-col items-center p-sm text-primary" href="#">
+<div class="bg-primary-container text-on-primary-container rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold">Topluluk</span>
+</a>
+<a class="flex flex-col items-center p-sm text-secondary hover:text-primary" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-[10px] mt-1">Program</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Ana Sayfa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e7e2d8",
+                        "tertiary-container": "#414a46",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e7e2d8",
+                        "on-secondary-fixed-variant": "#494740",
+                        "surface-tint": "#436652",
+                        "surface-container": "#f0eded",
+                        "on-surface-variant": "#414843",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-container": "#afb9b4",
+                        "primary-container": "#2d4f3d",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a9cfb8",
+                        "on-primary-container": "#9ac0a9",
+                        "tertiary-fixed": "#dbe5df",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-fixed": "#151d1a",
+                        "background": "#fbf9f8",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "on-background": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0f0",
+                        "surface-container-low": "#f6f3f2",
+                        "primary": "#163827",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "surface-container-high": "#eae8e7",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-surface": "#303030",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002113",
+                        "surface": "#fbf9f8",
+                        "tertiary": "#2a3430",
+                        "primary-fixed": "#c5ecd3",
+                        "on-secondary-container": "#67645c",
+                        "outline": "#727973",
+                        "outline-variant": "#c1c8c1",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary-fixed": "#1d1c16",
+                        "secondary": "#615e57",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e4e2e1",
+                        "primary-fixed-dim": "#a9cfb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "sm": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md pb-[90px] antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-background flex flex-col justify-center px-margin-mobile pt-sm pb-xs w-full max-w-container-max mx-auto docked full-width top-0 sticky z-40">
+<div class="flex items-center justify-between w-full h-16">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-surface-container-highest">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional, smiling woman in her early 30s. She has warm, natural lighting illuminating her face, creating a welcoming and modern aesthetic. The background is a soft, blurred off-white, emphasizing the clean, premium feel of the clinical minimalist design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6yr28IitIztKmWvWHNotMOZe-hSH6eXbxIVIODVkUM32HmiT76WMvWOHU9RQAPERg558jX8b5r9H3rVYTDcDINlh4mraoHBQ29RWv9gGUnoIDFmW22enRIBLoz5o6l71gk2DakGUHuB8AS1IqAO1JMK82kYw-mOvoCuqydJY5NpeBqtPeg5v7gEby-hlk2cI8aFczJ7V0_VuoKDFE0xEnnwlVJTMS2KILCASJeA8uK8BhanilVidY"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-semibold text-primary">Merhaba, Emine 👋</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Bugün kendin için güzel bir gün.</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest shadow-[0px_4px_20px_rgba(45,79,61,0.05)] text-primary hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile flex flex-col gap-lg mt-md">
+<!-- Active Camp Card & Daily Progress Bento -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-sm md:gap-gutter">
+<!-- Active Camp -->
+<div class="bg-primary-container rounded-[24px] p-md flex flex-col justify-between min-h-[160px] relative overflow-hidden group shadow-[0px_4px_20px_rgba(45,79,61,0.05)]">
+<!-- Abstract pattern overlay -->
+<div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #ffffff 0%, transparent 50%);"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="bg-surface-container-lowest text-primary-container font-label-sm text-label-sm px-3 py-1 rounded-full uppercase">1. Gün</span>
+<span class="material-symbols-outlined text-on-primary-container opacity-50 text-[32px]">flag</span>
+</div>
+<div class="relative z-10 mt-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary mb-1">21 Günlük<br/>Beslenme Kampı</h2>
+</div>
+</div>
+<!-- Daily Progress -->
+<div class="bg-surface-container-lowest rounded-[24px] p-md flex flex-col justify-center min-h-[160px] shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border border-surface-container-low">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Bugünkü ilerlemen</h3>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary-container">%72</span>
+</div>
+<div class="w-full bg-[#E8F2EC] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-1000 ease-out" style="width: 72%;"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-3 text-right">Harika gidiyorsun!</p>
+</div>
+</section>
+<!-- Today's Program -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Bugünün Programı</h2>
+<div class="flex flex-col gap-sm">
+<!-- Breakfast (Completed) -->
+<div class="bg-surface-container-lowest rounded-xl p-md flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border-l-4 border-l-primary-container opacity-70">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F5F0E6] flex items-center justify-center shrink-0 text-xl">☀️</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Kahvaltı</div>
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-1 line-through decoration-on-surface-variant/50">Badem Unlu Pankek</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 yumurta · badem unu · tahin</p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary-container shrink-0 self-start sm:self-auto">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md font-medium">Tamamlandı</span>
+</div>
+</div>
+<!-- Snack (Actionable) -->
+<div class="bg-surface-container-lowest rounded-xl p-md flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[0px_4px_20px_rgba(45,79,61,0.05)]">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F5F0E6] flex items-center justify-center shrink-0 text-xl">🥜</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Ara Öğün</div>
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-1">Yaban Mersini &amp; Badem</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">1 avuç</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg shrink-0 self-start sm:self-auto hover:opacity-90 active:scale-95 transition-all">
+                        Tamamla
+                    </button>
+</div>
+<!-- Dinner (Detail) -->
+<div class="bg-surface-container-lowest rounded-xl p-md flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[0px_4px_20px_rgba(45,79,61,0.05)]">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F5F0E6] flex items-center justify-center shrink-0 text-xl">🌙</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Akşam</div>
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-1">Fırın Balık &amp; Yeşillikli Salata</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">1 porsiyon</p>
+</div>
+</div>
+<button class="bg-[#F5F0E6] text-primary-container font-label-md text-label-md px-6 py-3 rounded-lg shrink-0 self-start sm:self-auto hover:bg-[#ebe5da] active:scale-95 transition-all">
+                        Detay
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Check-in & Recipe -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-sm">
+<!-- Check-in -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-[24px] p-md shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Bugünün Görevleri</h3>
+<div class="flex flex-col gap-4 flex-grow">
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer appearance-none w-6 h-6 border-2 border-primary-container rounded-sm checked:bg-primary-container transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors line-through text-on-surface-variant">Programımı tamamladım</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline-variant rounded-sm checked:bg-primary-container checked:border-primary-container transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Su hedefimi tamamladım</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline-variant rounded-sm checked:bg-primary-container checked:border-primary-container transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Öğün fotoğrafımı paylaştım</span>
+</label>
+</div>
+<button class="mt-6 w-full border border-primary-container text-primary-container bg-transparent hover:bg-primary-container/5 font-label-md text-label-md px-4 py-3 rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+                    Fotoğraf Ekle
+                </button>
+</div>
+<!-- Recipe Card -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-[24px] p-md shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-bl-[100px] -z-0"></div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 relative z-10">Bugünün Tarifi</h3>
+<h4 class="font-headline-md text-headline-md text-primary mb-4 relative z-10">Badem Unlu Pankek</h4>
+<div class="aspect-[4/3] rounded-xl overflow-hidden mb-4 relative z-10">
+<img alt="Badem Unlu Pankek" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A beautifully styled overhead shot of almond flour pancakes stacked neatly on a minimalist ceramic plate. Fresh blueberries and a drizzle of tahini garnish the top. The lighting is soft and bright, highlighting the golden-brown texture of the pancakes against a clean, off-white background, perfectly fitting a premium modern wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvdEGr0llLHAMeqAAkJ-_0EOQ8Lun5bMAV67S0DE_p1f-Emt0HXb23BJrcUfS7Q9ILvt53QTwZxcmrRDXr2CzVlZx33Q9Tb8iUI_3q7kTDQbMncfasKDN7b-F0SVQ4orwQVt45a-cqlnRr-Lufvwg6U9RLhmYupf6_lYIVl40tKeHqYLPLsnQvJlXfeOrihPqxnvqi7zAbKXS_NV0pYJUziW__aHOGRvYeKfRZFTTzCZlWZ2oF6HqZ"/>
+</div>
+<button class="w-full bg-[#F5F0E6] text-primary-container font-label-md text-label-md px-4 py-3 rounded-lg hover:bg-[#ebe5da] active:scale-95 transition-all relative z-10 mt-auto">
+                    Tarifi Gör
+                </button>
+</div>
+</section>
+<!-- Camp Community -->
+<section class="flex flex-col gap-sm mb-xl">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-md text-headline-md text-primary">Kamp Topluluğu</h2>
+<button class="text-primary-container font-label-sm text-label-sm flex items-center gap-1 hover:opacity-80 transition-opacity">
+                    Topluluğa Git
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-col gap-xs">
+<!-- Feed Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-start gap-4 shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border-l-2 border-l-transparent hover:border-l-primary-container transition-all">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img alt="Ayşe" class="w-full h-full object-cover" data-alt="A small circular avatar showing a healthy meal, specifically a colorful salad with grilled chicken, shot from above in bright, natural light on a clean white table setting. The colors are vibrant greens and warm tones, evoking health and wellness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cdnUXlOJF2VUY6MzvzGQUecMstgMJodvvFRwcWb4EDHiPzqhT7TFBUDqQFz2lG0C9keLE_7B-BQSJKhp_6N0bKaBME6BhsEaIDVnApAVHM1QnG2OdYubQzm3gDQ7dwbT4wDyNe2gfP-KB2Vfy2hDpVIyZVlbOROVLynr9ut7qzG0Mo5QKJ77JULWQKRWmaZEBhA10EboE1KRDrwGiRCt6J7GYA2qJKUzOuN1RjmR_gkmRwXtQmjS"/>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><strong>Ayşe</strong> bugün öğün fotoğrafını paylaştı.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">2 saat önce</span>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-start gap-4 shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border-l-2 border-l-transparent hover:border-l-primary-container transition-all">
+<div class="w-10 h-10 rounded-full shrink-0 bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="campaign">campaign</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><strong>Diyetisyen</strong> bugün yeni bir duyuru paylaştı.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">5 saat önce</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(45,79,61,0.05)] rounded-t-xl md:hidden pb-[calc(8px+env(safe-area-inset-bottom))]">
+<!-- Ana Sayfa (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-semibold w-16 h-14 hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Ana Sayfa</span>
+</button>
+<!-- Programım (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant w-16 h-14 hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Programım</span>
+</button>
+<!-- Tarifler (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant w-16 h-14 hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-sm text-label-sm">Tarifler</span>
+</button>
+<!-- Kamp (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant w-16 h-14 hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="Groups">video_file</span>
+<span class="font-label-sm text-label-sm">Kamp</span>
+</button>
+<!-- Mesajlar (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant w-16 h-14 hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1 relative" data-icon="chat_bubble">
+                chat_bubble
+                <span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</span>
+<span class="font-label-sm text-label-sm">Mesajlar</span>
+</button>
+</nav>
+<!-- Desktop Sidebar Shell (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col w-[280px] h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-surface-container-low p-md shadow-[4px_0px_20px_rgba(45,79,61,0.02)] z-50">
+<div class="font-headline-md text-headline-md text-primary mb-xl font-bold tracking-tight px-4">DietHub</div>
+<nav class="flex flex-col gap-2">
+<!-- Active -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary-container/10 text-primary font-label-md text-label-md font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+                Ana Sayfa
+            </a>
+<!-- Inactive -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                Programım
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+                Tarifler
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="Groups">video_file</span>
+                Kamp
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                Mesajlar
+            </a>
+</nav>
+</aside>
+<!-- Desktop Layout Adjustment -->
+<style>
+        @media (min-width: 768px) {
+            body {
+                padding-left: 280px; /* Make room for sidebar */
+                padding-bottom: 0; /* Remove bottom nav padding */
+            }
+            header {
+                max-width: 100%; /* Reset max width as it's within a padded body */
+            }
+        }
+    </style>
+</body></html>

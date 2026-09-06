@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Ayşe Yılmaz Profil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fbf9f8",
+                        "secondary-container": "#e7e2d8",
+                        "outline": "#727973",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary": "#163827",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#615e57",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#67645c",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "primary-container": "#2d4f3d",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "on-tertiary-container": "#afb9b4",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#436652",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c8c1",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed": "#c5ecd3",
+                        "inverse-primary": "#a9cfb8",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#414a46",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#9ac0a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(231, 226, 216, 0.5);
+            box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05);
+        }
+        .progress-track { background-color: #E8F2EC; }
+        .input-hollow { background-color: theme('colors.secondary-container'); transition: all 0.2s ease-in-out; }
+        .input-hollow:focus { background-color: theme('colors.surface-container-lowest'); border: 1px solid theme('colors.primary-container'); outline: none; }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen w-[280px] bg-surface flex-col py-lg px-md z-50">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">spa</span>
+<div>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">DietHub</h1>
+<p class="font-label-sm text-label-sm text-secondary">Professional Suite</p>
+</div>
+</div>
+<ul class="flex flex-col gap-base flex-1">
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">dashboard</span>Overview</a></li>
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-secondary-container bg-opacity-20 transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>Clients</a></li>
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">campaign</span>Camps</a></li>
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">restaurant_menu</span>Recipes</a></li>
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">chat</span>Messages</a></li>
+<li><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">assignment_turned_in</span>Check-ins</a></li>
+</ul>
+<div class="mt-auto flex flex-col gap-base">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">notifications</span>Notifications</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined">settings</span>Settings</a>
+<button class="mt-md bg-primary-container text-on-primary w-full py-sm rounded-lg font-label-md text-label-md hover:bg-primary transition-colors">Add New Client</button>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="flex md:hidden w-full justify-between items-center px-margin-mobile py-md bg-surface-bright z-50 sticky top-0">
+<h1 class="font-headline-md text-headline-md text-primary">DietHub</h1>
+<div class="flex gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">help</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</header>
+<header class="hidden md:flex fixed top-0 left-[280px] w-[calc(100%-280px)] justify-between items-center px-xl py-md bg-surface-bright z-40 bg-opacity-90 backdrop-blur-sm">
+<div class="flex-1"></div>
+<div class="flex gap-md items-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">help</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] md:pt-[88px] p-margin-mobile md:p-xl max-w-container-max mx-auto w-full">
+<!-- Header Profile Section -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-lg gap-md">
+<div class="flex items-center gap-md">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-surface-container-highest">
+<img alt="Ayşe Yılmaz Profil Fotoğrafı" class="w-full h-full object-cover" data-alt="A close-up portrait of a serene young woman in a modern, light-filled minimalist room. Soft, natural daylight highlights her features against a warm off-white background. The atmosphere is calm and professional, aligning perfectly with a premium wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKOtDRZsXmj3L123FPxJMeQgMaXRPQXH2ZvtHY2rTCRivkBGdRjrmef3HaVJXl0Ge-cWu4brwmpWm5XSN_v27Fc64dVlQ5l_DvpfU81tiIsXgAzDY-RrNRCV_VzDGq9601JIe7JKGbdBLsh1RQ6NdY87autijT6hohPHtFJYBMeMQYmIT66fCUzI3yxDPT1C7rmfQRJJzYkNHKKgErXL7DyWvfM5jVihABC61BX4EvHfeDPV-2j6Mq"/>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Ayşe Yılmaz</h2>
+<p class="font-body-md text-body-md text-secondary">32 Yaş • 168 cm • 64 kg • Hedef: 58 kg</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="bg-secondary-container text-primary-container px-md py-sm rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Mesaj Gönder</button>
+<button class="bg-primary-container text-on-primary px-md py-sm rounded-lg font-label-md text-label-md hover:bg-primary transition-colors">Randevu Al</button>
+</div>
+</div>
+<!-- Active Camp Widget -->
+<div class="glass-card rounded-xl p-md mb-xl flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-container p-sm bg-primary-fixed rounded-full" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">21 Günlük Beslenme Kampı</h3>
+<p class="font-body-md text-body-md text-secondary">Aktif Program</p>
+</div>
+</div>
+<div class="w-full md:w-1/3 flex flex-col gap-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-secondary">
+<span>15. Gün</span>
+<span>21 Gün</span>
+</div>
+<div class="w-full h-2 rounded-full progress-track overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="flex gap-lg border-b border-surface-container-highest mb-lg overflow-x-auto pb-xs">
+<button class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-sm whitespace-nowrap">Genel</button>
+<button class="font-label-md text-label-md text-secondary hover:text-primary transition-colors pb-sm whitespace-nowrap">Program</button>
+<button class="font-label-md text-label-md text-secondary hover:text-primary transition-colors pb-sm whitespace-nowrap">Check-inler</button>
+<button class="font-label-md text-label-md text-secondary hover:text-primary transition-colors pb-sm whitespace-nowrap">Fotoğraflar</button>
+<button class="font-label-md text-label-md text-secondary hover:text-primary transition-colors pb-sm whitespace-nowrap">Mesajlar</button>
+</div>
+<!-- Tab Content: Genel -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Left Column: Check-in & Notes -->
+<div class="md:col-span-2 flex flex-col gap-md">
+<!-- Last Check-in Summary -->
+<div class="glass-card rounded-xl p-md">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-headline-md text-headline-md text-primary">Son Check-in Özeti</h4>
+<span class="font-label-sm text-label-sm text-secondary">2 gün önce</span>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="p-sm bg-surface-container-low rounded-lg flex flex-col gap-xs border border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">done_all</span> Program Uyumu</span>
+<span class="font-headline-md text-headline-md text-primary-container">%95</span>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg flex flex-col gap-xs border border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">water_drop</span> Su Tüketimi</span>
+<span class="font-headline-md text-headline-md text-primary-container">2.5L</span>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg flex flex-col gap-xs border border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">mood</span> Enerji Seviyesi</span>
+<span class="font-headline-md text-headline-md text-primary-container">Yüksek</span>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg flex flex-col gap-xs border border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">scale</span> Güncel Kilo</span>
+<span class="font-headline-md text-headline-md text-primary-container">63.2 kg <span class="text-label-sm text-primary-container">-0.8kg</span></span>
+</div>
+</div>
+</div>
+<!-- Dietitian Notes -->
+<div class="glass-card rounded-xl p-md">
+<div class="flex justify-between items-center mb-sm">
+<h4 class="font-headline-md text-headline-md text-primary flex items-center gap-xs"><span class="material-symbols-outlined text-secondary">edit_note</span> Diyetisyen Notları</h4>
+<button class="text-primary-container font-label-md text-label-md hover:underline">Kaydet</button>
+</div>
+<textarea class="w-full min-h-[150px] input-hollow rounded-lg p-sm font-body-md text-body-md text-on-surface-variant border-none resize-y" placeholder="Ayşe Hanım için gözlem ve notlarınızı buraya ekleyin...">Su tüketimi hedeflere uygun. Akşam öğünlerinde karbonhidrat miktarını hafifçe azaltarak ödem atımını hızlandırabiliriz. Motivasyonu oldukça yüksek.</textarea>
+</div>
+</div>
+<!-- Right Column: Gallery -->
+<div class="md:col-span-1 flex flex-col gap-md">
+<div class="glass-card rounded-xl p-md h-full">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-headline-md text-headline-md text-primary">Son Fotoğraflar</h4>
+<button class="text-secondary hover:text-primary transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="aspect-square rounded-lg overflow-hidden relative group">
+<img alt="Öğün fotoğrafı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A beautifully plated, healthy Mediterranean salad bowl on a minimalist white ceramic plate. The lighting is bright and natural, casting soft shadows on a light oak wooden table. Colors are fresh greens, vibrant reds, and warm off-whites. The style is modern, appetizing, and perfectly suited for a high-end wellness application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmwBx0ypzRP9cL_V1Unm6GIKHLb5W23X-w9Y7uREokteHuBZFa50JAVO0TQ6pvrTZRp32ah6gFjVGJEkdtXDG0KVcxN_6pQ9q9DBoAQ_cpIzsKSjt5uduqcd-x5DEfqfCA86zNUjKarCJomzKA0gbkCcNX6FvRPt3nawJnpEpcly2BxRiWjLqpZE3qE4Lo4x3uvm0x1VXViDJNWIG6B1VbHx5wUFfDkZKGRVlDeAj2l2A01NRlvuyl"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-sm">
+<span class="font-label-sm text-label-sm text-on-primary">Kahvaltı</span>
+</div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden relative group">
+<img alt="Ara öğün fotoğrafı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A steaming cup of green tea next to a small bowl of mixed nuts and berries on a clean, minimalist off-white surface. The lighting is soft and diffused, creating a calm and healthy morning atmosphere. The color palette emphasizes natural earth tones and subtle greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNUGbxpuxACF3WYEkS1lEqqmRatDlIjgf-5qtRsqwEV2xJtk9G89t-0aWnJNqYqgxevN3IiJRtrCWr5ly1ANDv9YtLTSvvUE_1guz5_sYror3mWXtfDlWtzSeXgcOaBPDTCr7CdwCfMUWyrrfeMnOdy1IkUqZOFOIjRd4GOTVuWD335rA9Fcuefff5JPJ8U7VcH_hJtyQzu2mhw2rNkLxzqRAFre1UeIfvgWUzoLSTKht6w-vnA9LZ"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-sm">
+<span class="font-label-sm text-label-sm text-on-primary">Ara Öğün</span>
+</div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden relative group">
+<img alt="Akşam öğünü fotoğrafı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A perfectly grilled salmon fillet served with steamed asparagus and a lemon wedge on a premium matte white plate. The setting is clean, clinical yet warm, with bright natural light enhancing the fresh textures of the food. The overall aesthetic is professional dietitian content." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIxUu349vEhJpCJyvSYNGI7jOw-noLlBe7Usno5i4DrF9RAFjeyNCanE7sTt8xttaxgUdw9lc6ssWcGbrjT2CGp4tVxe-i5rA2ugZ9oe3IikfzXq7gNt8LXomE2afkZI2pdgVlx0lqWMKdRUWm60-T3bNw6gJBhLxVOURfAWV__liIB06T29dmXdXGWsJAY_zPrR8hFVqasGiSLVHq3RZ_lBZmUS0bdsqDV2yu6QN-itlWhjwZ1a21"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-sm">
+<span class="font-label-sm text-label-sm text-on-primary">Akşam</span>
+</div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden relative bg-surface-container-low flex items-center justify-center border border-dashed border-surface-container-highest cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary">add_photo_alternate</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yeni Kamp Oluştur - DietHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fbf9f8",
+                        "secondary-container": "#e7e2d8",
+                        "outline": "#727973",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary": "#163827",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#615e57",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#67645c",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "primary-container": "#2d4f3d",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "on-tertiary-container": "#afb9b4",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#436652",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c8c1",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed": "#c5ecd3",
+                        "inverse-primary": "#a9cfb8",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#414a46",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#9ac0a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright dark:bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[280px] bg-surface dark:bg-surface-dim flex flex-col py-lg px-md z-20">
+<div class="mb-xl px-sm">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed mb-xs">DietHub</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Professional Suite</p>
+</div>
+<div class="flex-grow space-y-sm flex flex-col">
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">group</span>
+                Clients
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary dark:text-primary-fixed dark:border-primary-fixed bg-secondary-container/20 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]" style="font-variation-settings: 'FILL' 1;">campaign</span>
+                Camps
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">restaurant_menu</span>
+                Recipes
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">chat</span>
+                Messages
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">assignment_turned_in</span>
+                Check-ins
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-sm text-[24px]">settings</span>
+                Settings
+            </a>
+</div>
+<button class="mt-auto bg-primary-container text-on-primary font-label-md text-label-md py-sm px-md rounded-lg hover:opacity-90 transition-opacity">
+            Add New Client
+        </button>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-[280px] flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-xl py-md w-full bg-surface-bright dark:bg-surface sticky top-0 z-10">
+<div class="flex items-center space-x-md">
+<!-- Header context instead of product name if in flow -->
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">Yeni Kamp Oluştur</h2>
+</div>
+<div class="flex items-center space-x-md text-on-surface-variant dark:text-on-secondary-fixed-variant">
+<button class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]">help</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="Dietitian profile" class="w-full h-full object-cover" data-alt="A professional headshot of a female dietitian in her 30s with warm natural lighting, wearing a minimalist modern white blouse. The background is a slightly blurred, high-end clean clinic setting with a hint of green plant life. Serene, authoritative yet empathetic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDLyrRmeJ7IMaeMIGsL1zGhTMTYZM3W3v0KE99Teb6b3saKEAdQQ6GZkulYAnx6iyPQ9t1bDHGuue67LZpqJ9bE1nuMosx7xZH7WmrdR-e5BXsHRKr7eYZecrUMxYJLL8mpz5s9DDkZZF8vpDqdpeq9xQPlS1Z2DwN_fpmazXu4ZKaEVTqU0CjUszbgaUI0MQgqjiJempuWOjC0XwGwYtSMc9G3Rgh44cULQknYdt4GP5ctMu6UHv8"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 px-xl py-lg overflow-y-auto w-full max-w-container-max mx-auto">
+<div class="bg-surface-container-lowest rounded-xl p-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border border-surface-container-highest dark:border-surface-dim">
+<!-- Wizard Header -->
+<div class="flex items-center justify-between mb-xl pb-md border-b border-secondary-container">
+<div class="flex items-center space-x-sm text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h3 class="font-headline-md text-headline-md">Kamp Detayları</h3>
+</div>
+<div class="flex space-x-sm">
+<button class="px-md py-sm rounded-lg font-label-md text-label-md text-primary bg-transparent border border-primary hover:bg-secondary-container transition-colors">Taslak Kaydet</button>
+<button class="px-md py-sm rounded-lg font-label-md text-label-md text-on-primary bg-primary-container hover:opacity-90 transition-opacity">Kampı Yayınla</button>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl mb-xl">
+<div class="space-y-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Kamp Adı</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-sm rounded-lg border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="Örn: 21 Günlük Arınma Kampı" type="text"/>
+</div>
+<div class="flex space-x-md">
+<div class="flex-1">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Başlangıç Tarihi</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-sm rounded-lg border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all" type="date"/>
+</div>
+<div class="flex-1">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Süre (Gün)</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-sm rounded-lg border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="21" type="number"/>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Kamp Açıklaması</label>
+<textarea class="w-full h-[124px] bg-secondary-fixed text-on-surface font-body-md text-body-md p-sm rounded-lg border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all resize-none" placeholder="Danışanların bu kampta neler deneyimleyeceğini açıklayın..." rows="4"></textarea>
+</div>
+</div>
+<!-- Daily Program Section -->
+<div class="mt-xl pt-lg border-t border-secondary-container">
+<h3 class="font-headline-md text-headline-md text-primary mb-md">Günlük Program Kurgusu</h3>
+<!-- Days Scroller -->
+<div class="flex space-x-sm overflow-x-auto hide-scrollbar pb-sm mb-lg">
+<button class="flex-shrink-0 px-md py-sm rounded-full font-label-md text-label-md bg-primary-container text-on-primary">1. Gün</button>
+<button class="flex-shrink-0 px-md py-sm rounded-full font-label-md text-label-md bg-surface-container hover:bg-secondary-container text-on-surface-variant transition-colors">2. Gün</button>
+<button class="flex-shrink-0 px-md py-sm rounded-full font-label-md text-label-md bg-surface-container hover:bg-secondary-container text-on-surface-variant transition-colors">3. Gün</button>
+<button class="flex-shrink-0 px-md py-sm rounded-full font-label-md text-label-md bg-surface-container hover:bg-secondary-container text-on-surface-variant transition-colors">4. Gün</button>
+<button class="flex-shrink-0 px-md py-sm rounded-full font-label-md text-label-md bg-surface-container hover:bg-secondary-container text-on-surface-variant transition-colors">5. Gün</button>
+<button class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-secondary-container text-primary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Meals Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Breakfast -->
+<div class="bg-surface-bright rounded-xl p-md border border-secondary-container flex flex-col h-full">
+<div class="flex items-center space-x-sm mb-md text-primary">
+<span class="material-symbols-outlined">sunny</span>
+<h4 class="font-label-md text-label-md uppercase tracking-wider">Kahvaltı</h4>
+</div>
+<div class="flex-1 space-y-sm">
+<button class="w-full py-md border border-dashed border-outline-variant rounded-lg text-secondary flex flex-col items-center justify-center hover:bg-secondary-fixed transition-colors hover:text-primary">
+<span class="material-symbols-outlined mb-xs">add_circle</span>
+<span class="font-label-sm text-label-sm">Tarif Ekle</span>
+</button>
+<div class="space-y-xs pt-sm">
+<label class="block font-label-sm text-label-sm text-on-surface-variant">Diyetisyen Notu</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-xs rounded border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all text-sm" placeholder="Güne limonlu su ile başlayın..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Snack 1 -->
+<div class="bg-surface-bright rounded-xl p-md border border-secondary-container flex flex-col h-full">
+<div class="flex items-center space-x-sm mb-md text-primary">
+<span class="material-symbols-outlined">coffee</span>
+<h4 class="font-label-md text-label-md uppercase tracking-wider">Ara Öğün</h4>
+</div>
+<div class="flex-1 space-y-sm">
+<!-- Filled State Example -->
+<div class="bg-surface-container-lowest p-sm rounded-lg border border-secondary-fixed relative group">
+<button class="absolute top-sm right-sm text-outline hover:text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<h5 class="font-label-md text-label-md text-on-surface mb-xs">Yeşil Çay &amp; Çiğ Badem</h5>
+<p class="font-body-md text-label-sm text-on-surface-variant">Porsiyon: 1 Fincan / 10 Adet</p>
+</div>
+<button class="w-full py-sm border border-dashed border-outline-variant rounded-lg text-secondary flex items-center justify-center hover:bg-secondary-fixed transition-colors hover:text-primary space-x-xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="font-label-sm text-label-sm">Ekle</span>
+</button>
+</div>
+</div>
+<!-- Lunch -->
+<div class="bg-surface-bright rounded-xl p-md border border-secondary-container flex flex-col h-full">
+<div class="flex items-center space-x-sm mb-md text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+<h4 class="font-label-md text-label-md uppercase tracking-wider">Öğle</h4>
+</div>
+<div class="flex-1 space-y-sm">
+<button class="w-full py-md border border-dashed border-outline-variant rounded-lg text-secondary flex flex-col items-center justify-center hover:bg-secondary-fixed transition-colors hover:text-primary">
+<span class="material-symbols-outlined mb-xs">add_circle</span>
+<span class="font-label-sm text-label-sm">Tarif Ekle</span>
+</button>
+<div class="space-y-xs pt-sm">
+<label class="block font-label-sm text-label-sm text-on-surface-variant">Diyetisyen Notu</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-xs rounded border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all text-sm" placeholder="Bol yeşillik tercih edelim..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Dinner -->
+<div class="bg-surface-bright rounded-xl p-md border border-secondary-container flex flex-col h-full">
+<div class="flex items-center space-x-sm mb-md text-primary">
+<span class="material-symbols-outlined">nightlight</span>
+<h4 class="font-label-md text-label-md uppercase tracking-wider">Akşam</h4>
+</div>
+<div class="flex-1 space-y-sm">
+<button class="w-full py-md border border-dashed border-outline-variant rounded-lg text-secondary flex flex-col items-center justify-center hover:bg-secondary-fixed transition-colors hover:text-primary">
+<span class="material-symbols-outlined mb-xs">add_circle</span>
+<span class="font-label-sm text-label-sm">Tarif Ekle</span>
+</button>
+<div class="space-y-xs pt-sm">
+<label class="block font-label-sm text-label-sm text-on-surface-variant">Diyetisyen Notu</label>
+<input class="w-full bg-secondary-fixed text-on-surface font-body-md text-body-md p-xs rounded border-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary focus:outline-none transition-all text-sm" placeholder="En geç 19:30'da bitirelim..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

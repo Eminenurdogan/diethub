@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Tarifler</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e1",
+                        "outline-variant": "#c1c8c1",
+                        "surface-tint": "#436652",
+                        "secondary-container": "#e7e2d8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "background": "#fbf9f8",
+                        "primary": "#163827",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-highest": "#e4e2e1",
+                        "inverse-primary": "#a9cfb8",
+                        "on-tertiary-container": "#afb9b4",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-background": "#1b1c1c",
+                        "surface-bright": "#fbf9f8",
+                        "surface": "#fbf9f8",
+                        "tertiary-container": "#414a46",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#e7e2d8",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-secondary-fixed-variant": "#494740",
+                        "surface-container": "#f0eded",
+                        "on-surface-variant": "#414843",
+                        "on-primary-fixed": "#002113",
+                        "primary-container": "#2d4f3d",
+                        "on-primary-container": "#9ac0a9",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed": "#c5ecd3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#67645c",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#615e57",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "tertiary-fixed": "#dbe5df",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "outline": "#727973"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "container-max": "1200px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+            padding-bottom: 80px; /* Space for BottomNavBar */
+        }
+        
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md md:hidden antialiased flex flex-col min-h-screen">
+<!-- Header Section -->
+<header class="px-margin-mobile pt-sm pb-md sticky top-0 bg-background/90 backdrop-blur-sm z-40">
+<div class="flex items-center justify-between mb-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tarifler</h1>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-secondary-container text-on-surface-variant font-body-md text-body-md rounded-xl py-sm pl-[40px] pr-sm border-none focus:ring-1 focus:ring-primary focus:bg-on-primary transition-colors placeholder:text-outline-variant h-12" placeholder="Tarif, malzeme veya kategori ara..." type="text"/>
+</div>
+<!-- Categories (Horizontal Scroll) -->
+<div class="flex overflow-x-auto hide-scroll gap-sm mt-md pb-xs">
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-primary text-on-primary font-label-md text-label-md transition-colors">Tümü</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-secondary-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Kahvaltı</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-secondary-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Pratik</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-secondary-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Vegan</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-secondary-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Tatlılar</button>
+</div>
+</header>
+<!-- Main Content: Recipe Cards -->
+<main class="flex-grow px-margin-mobile flex flex-col gap-md pb-xl">
+<!-- Featured Recipe (Bento Style Large) -->
+<article class="w-full bg-on-primary rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(45,79,61,0.05)]">
+<div class="w-full h-48 bg-cover bg-center" data-alt="A high-angle, mouth-watering professional food photography shot of an acai bowl topped with fresh berries, banana slices, and coconut flakes. The bowl is set on a minimalist white marble countertop. Natural, soft daylight streams from a window, creating a serene, healthy, and premium aesthetic consistent with a modern clinical minimalist design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBH4N27RgysWezJI0CKrMuJGv8sg5BohGQEB2HXFWYlffQ4ngQ84lN1jKnvQBvzvfxDKJqA9pCsZgrcuF_bizFwzePF3SswW3rLSttCNLi6-D10CyBJcfJTsvm6d2rahSbC761L_7aUVgtvyXi6GkTph0Q_XfJWtr32yOtSnaEt-zSsQfowak2M492NGxFB40XvesNtrhBYxu8DOjzWK43QFC7ui63eJJ3WdS7MdUkQ-uHtntiwaGkC')"></div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<span class="bg-surface-container px-2 py-1 rounded-full text-primary font-label-sm text-label-sm">Kahvaltı</span>
+<button class="text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Orman Meyveli Yulaf Kasesi</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Güne enerjik başlamak için antioksidan deposu, pratik ve lezzetli bir seçenek.</p>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="timer">timer</span>
+<span class="font-label-md text-label-md">10 dk</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-md text-label-md">Kolay</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant ml-auto">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-md text-label-md">320 kcal</span>
+</div>
+</div>
+</div>
+</article>
+<!-- List Recipe 1 -->
+<article class="w-full bg-on-primary rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex">
+<div class="w-[120px] h-auto bg-cover bg-center shrink-0" data-alt="A clean, bright food photography shot of a grilled salmon fillet served with a side of vibrant green asparagus and quinoa. Plated on a matte white ceramic dish against a light off-white background. The lighting is soft and diffused, emphasizing the fresh, healthy ingredients in a premium, minimalist style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzpT3HHi0Qmq-zVEFUSdAlvq2KpWUsW5fj_h46jtO0LiVb4sKipGKyPMcyV-BFqXPgozf6u7oSTBkyy5KQ-Bdv3CELvstXBG9hQ2YIsZoA_uXJBhbfnnhfzRyA4VnpHIYSS1kUgWpAf3vBu2pykWQPZJ-9Lw0lyewSpyUc0_1J3Q3osnNjfUJHt4U6oK5d4r9bxnIyz63fAMD0SY5Fc46zmdrkqEmeBS6whIr_tqzvrf-EprVX_mAs')"></div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<span class="bg-surface-container px-2 py-1 rounded-full text-primary font-label-sm text-label-sm">Akşam</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-xs leading-tight">Izgara Somon ve Kinoa</h3>
+</div>
+<div class="flex items-center gap-sm mt-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span>
+<span class="font-label-sm text-label-sm">25 dk</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-sm text-label-sm">Orta</span>
+</div>
+</div>
+</div>
+</article>
+<!-- List Recipe 2 -->
+<article class="w-full bg-on-primary rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex">
+<div class="w-[120px] h-auto bg-cover bg-center shrink-0" data-alt="A close-up, premium shot of a vibrant green avocado toast on artisanal sourdough bread, garnished with microgreens and a sprinkle of red pepper flakes. The setting is minimal, with soft, natural light casting gentle shadows on a clean off-white surface, conveying a sense of fresh, modern wellness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfzjWLbXbZGS30yH_OcBEmx4WQMMJo1LMRnrG72dxYQaS1q6jspv5vba2rA-N3JpNzLVsigWn4n6P9SPW9djWQkGH96RTFSiIiEpRqINo586XODxoKIQYgqPHCuN2mxW9IWZjvQcAV4LUghmyVyIwlDiYrewShRunejzSD0SitMs7klSpynhKXulwMlFUIO8qRxT3myVuPlZqYZ-_NpT4FHAbq-RpqYQenXP7YSvnRPNnplcSiCH3B')"></div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<span class="bg-surface-container px-2 py-1 rounded-full text-primary font-label-sm text-label-sm">Pratik</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-xs leading-tight">Avokadolu Çavdar Tost</h3>
+</div>
+<div class="flex items-center gap-sm mt-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span>
+<span class="font-label-sm text-label-sm">5 dk</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-sm text-label-sm">Kolay</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Bottom Navigation Bar (Generated from JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(45,79,61,0.05)] rounded-t-xl">
+<!-- Inactive: Ana Sayfa -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-xs">Ana Sayfa</span>
+</a>
+<!-- Inactive: Programım -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-xs">Programım</span>
+</a>
+<!-- Active: Tarifler -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu" data-weight="fill" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-label-sm text-label-sm mt-xs">Tarifler</span>
+</a>
+<!-- Inactive: Kamp -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="Groups">video_file</span>
+<span class="font-label-sm text-label-sm mt-xs">Kamp</span>
+</a>
+<!-- Inactive: Mesajlar -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-xs">Mesajlar</span>
+</a>
+</nav>
+</body></html>

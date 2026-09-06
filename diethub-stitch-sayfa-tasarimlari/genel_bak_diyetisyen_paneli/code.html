@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diyetisyen Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fbf9f8",
+                        "secondary-container": "#e7e2d8",
+                        "outline": "#727973",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary": "#163827",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#615e57",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#67645c",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "primary-container": "#2d4f3d",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "on-tertiary-container": "#afb9b4",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#436652",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c8c1",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed": "#c5ecd3",
+                        "inverse-primary": "#a9cfb8",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#414a46",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#9ac0a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .card-shadow { box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05); }
+    </style>
+</head>
+<body class="antialiased min-h-screen font-body-md text-body-md">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[280px] bg-surface dark:bg-surface-dim flex flex-col py-lg px-md z-50">
+<div class="flex items-center gap-sm mb-lg">
+<span class="font-display-lg text-display-lg text-primary dark:text-primary-fixed">DietHub</span>
+</div>
+<div class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm mb-md uppercase">Professional Suite</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-primary font-bold border-r-4 border-primary dark:text-primary-fixed dark:border-primary-fixed bg-secondary-container dark:bg-secondary rounded-l-lg transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-label-md text-label-md">Camps</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-md text-label-md">Recipes</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-label-md text-label-md">Check-ins</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+</li>
+<li class="mt-auto">
+<a class="flex items-center gap-md py-sm px-sm text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+<button class="mt-lg w-full bg-primary-container text-on-primary font-label-md text-label-md py-sm px-md rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+            Add New Client
+        </button>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 ml-[280px] w-[calc(100%-280px)] bg-surface-bright dark:bg-surface flex justify-between items-center px-xl py-md z-40">
+<div class="flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full border border-surface-variant focus-within:border-primary-container focus-within:bg-surface-container-lowest transition-colors w-96">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface placeholder:text-outline-variant py-sm" placeholder="Search clients, camps..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-surface-container" data-alt="A professional headshot of a female dietitian in a minimalist clinic setting, soft natural lighting, light green background, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3BfvqIB46kEVXXlriq_C1bqW_zpwO8_9kb72AWYnkTdbWpHv2Fc37Lz2bEYn1am4rz_JiqQsS1QoBLFRaXa5sUrrqxzX9nUxUstRTDaYT89q9nFoweMS3Mqo5lpuhpg0KKjVumXxlJjFqGT1KPKIIthiyPfYV6maOoiWrZ42021Gj78MUoCb5sZFgas7HwKvZbgbZ5PaXCLOiHakKcjzivZGpSC3Ipwcqq-ABpXilLmtmLDBt7l3"/>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[280px] mt-[88px] p-xl max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Merhaba, Diyetisyen Elif Nur 👋</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Bugün danışanlarının durumuna göz at.</p>
+</div>
+<div class="font-label-md text-label-md text-secondary bg-surface-container-low px-md py-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined">calendar_today</span>
+                24 Ekim 2023, Salı
+            </div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Stats Cards (Top Row) -->
+<div class="col-span-12 grid grid-cols-4 gap-gutter mb-md">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">48</div>
+<div class="font-label-sm text-label-sm text-secondary">Aktif Danışan</div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">3</div>
+<div class="font-label-sm text-label-sm text-secondary">Aktif Kamp</div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">35</div>
+<div class="font-label-sm text-label-sm text-secondary">Bugün Check-in Yapan</div>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">7</div>
+<div class="font-label-sm text-label-sm text-secondary">Bekleyen Mesaj</div>
+</div>
+</div>
+</div>
+<!-- Main Left Column -->
+<div class="col-span-8 flex flex-col gap-gutter">
+<!-- Active Camps Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md text-primary">Kamplarım</h2>
+<button class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors flex items-center gap-xs">
+                            Tümünü Gör <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="border border-surface-variant rounded-lg p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-xs">21 Günlük Beslenme Kampı</h3>
+<p class="font-body-md text-body-md text-secondary flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">group</span> 48 danışan
+                                </p>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-sm py-xs rounded font-label-sm text-label-sm">Aktif</span>
+</div>
+<div class="mb-sm flex justify-between font-label-sm text-label-sm">
+<span class="text-secondary">İlerleme: 7/21 gün</span>
+<span class="text-primary-container font-semibold">%33</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 mb-md">
+<div class="bg-primary-container h-2 rounded-full" style="width: 33%"></div>
+</div>
+<div class="flex justify-end">
+<button class="bg-secondary-fixed text-primary-container font-label-md text-label-md py-sm px-md rounded-lg hover:bg-secondary-container transition-colors">
+                                Kampı Yönet
+                            </button>
+</div>
+</div>
+</div>
+<!-- Recent Activity Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Bugünkü Aktivite</h2>
+<ul class="flex flex-col">
+<li class="flex items-start gap-md py-sm border-b border-surface-variant last:border-0 last:pb-0">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Profile picture of a female client, bright lighting, soft blurred background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLs6p807g-Lr78S5yLITffKWjyZZbwbIbuH_20j6LEplA0QbLqu3fzjaNkeebDHm5QYbZkxz6PmUbwLatXanc3IQbP0F5J_MSevP3xMVakyu7HEO5DAdViZllyyMuoxvO9GGGY2wp9yaqA6hdM0969QHX1-RSsLbvTCFbbNZjqiBSNkPJsFC-9nEAFs2lQMzB4s20GSxFWaMRxMaIdeL5fdv66UVmheU9-O0kKmUHcMpZGYikrS54S"/>
+<div class="flex-grow">
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium">Ayşe Yılmaz</span> günlük programını tamamladı.</p>
+<span class="font-label-sm text-label-sm text-outline">10 dk önce</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<li class="flex items-start gap-md py-sm border-b border-surface-variant last:border-0 last:pb-0">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Profile picture of a female client, casual outdoors, soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz3gbhNBrZ2ee6TETeHfNWC-veIKFHnK7b5WxYJJIl-gopY9kIPh8C3owarWBI9-QEfeCZh0M3InLt1XGxoH4evufsXvH0PN3OpMKjswvf3u23nG4jLFe0hGhp0jsQqhvO2OMFvra7coL9uX-TOyBzKDr306b4fsMta8y0ePcek3u5yNBumZGwj3CT6KVTGK47dJ-zcneX7k9gT2Va-e53DJRqm0-6hIE29CdfhZbJtQmv0jo0tSIQ"/>
+<div class="flex-grow">
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium">Zeynep Kaya</span> öğün fotoğrafı gönderdi.</p>
+<span class="font-label-sm text-label-sm text-outline">25 dk önce</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_dining</span>
+</li>
+<li class="flex items-start gap-md py-sm border-b border-surface-variant last:border-0 last:pb-0">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Profile picture of a male client, professional studio shot, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqr9w8NBKLC9SFIo47ulN88OC9UMMlkqwvhcX8Otm2Ju7P-T5dWwwll1hCRnaYOIh6HrDh5skyj8vPgJoEuCfp_k4ZgwMx5S8RGUqo0B1kjMJ2uxSJZ8zk7T7En7T1uVlT030ot91Ss0vqJXedMUiii1Mrz7zfZQKUKIwdoZ6fdF6px8xgbcMZ2rPYlvRtH1sPcDaEY3g-XE9ldAblw92zHqeowj5TcpcN3j6QKAVEZEEPeWoroHZs"/>
+<div class="flex-grow">
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium">Mehmet Demir</span> yeni mesaj gönderdi.</p>
+<span class="font-label-sm text-label-sm text-outline">1 saat önce</span>
+</div>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Sidebar -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<!-- Quick Actions Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md card-shadow">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Hızlı İşlemler</h2>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-secondary-fixed text-primary-container font-label-md text-label-md py-md px-md rounded-lg hover:bg-secondary-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined">campaign</span>
+                            + Yeni Kamp
+                        </button>
+<button class="w-full bg-secondary-fixed text-primary-container font-label-md text-label-md py-md px-md rounded-lg hover:bg-secondary-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined">restaurant_menu</span>
+                            + Tarif Ekle
+                        </button>
+<button class="w-full bg-secondary-fixed text-primary-container font-label-md text-label-md py-md px-md rounded-lg hover:bg-secondary-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined">person_add</span>
+                            + Danışan Ekle
+                        </button>
+<button class="w-full border border-primary-container text-primary-container font-label-md text-label-md py-md px-md rounded-lg hover:bg-surface-container transition-colors flex items-center gap-sm mt-sm">
+<span class="material-symbols-outlined">inbox</span>
+                            Mesajları Gör
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

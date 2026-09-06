@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Topluluk Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c1c8c1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "secondary": "#615e57",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e7e2d8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "surface-tint": "#436652",
+                        "inverse-primary": "#a9cfb8",
+                        "primary-container": "#2d4f3d",
+                        "on-tertiary-fixed": "#151d1a",
+                        "surface-variant": "#e4e2e1",
+                        "outline": "#727973",
+                        "on-primary-fixed": "#002113",
+                        "on-primary-container": "#9ac0a9",
+                        "on-surface": "#1b1c1c",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "on-background": "#1b1c1c",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fbf9f8",
+                        "on-secondary-container": "#67645c",
+                        "primary-fixed": "#c5ecd3",
+                        "tertiary-container": "#414a46",
+                        "tertiary": "#2a3430",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary-fixed": "#dbe5df",
+                        "inverse-surface": "#303030",
+                        "primary": "#163827",
+                        "surface-container": "#f0eded",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-container": "#afb9b4",
+                        "background": "#fbf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "on-secondary-fixed": "#1d1c16"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fbf9f8; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .soft-shadow { box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05); }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased overflow-x-hidden flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex w-[280px] h-screen sticky left-0 top-0 bg-surface-container-low dark:bg-surface-dim flex-col py-md px-sm border-r border-outline-variant dark:border-outline shrink-0">
+<div class="mb-xl px-sm">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tight">DietHub</h1>
+<p class="font-body-md text-secondary mt-1">Diyetisyen Paneli</p>
+</div>
+<ul class="flex flex-col gap-2 flex-grow">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<!-- Danışanlar -->
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Danışanlar</span>
+</a>
+</li>
+<!-- Topluluk (Active) -->
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-primary dark:text-primary-fixed font-bold bg-surface dark:bg-surface-container-highest transition-transform scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-label-md text-label-md">Topluluk</span>
+</a>
+</li>
+<!-- Programlar -->
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">Programlar</span>
+</a>
+</li>
+<!-- Ayarlar -->
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Ayarlar</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-on-primary py-sm px-md rounded-lg font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                Yeni Duyuru Paylaş
+            </button>
+<div class="mt-md flex items-center gap-sm px-sm pt-md border-t border-outline-variant">
+<img alt="Diyetisyen Profil Resmi" class="w-10 h-10 rounded-full object-cover bg-surface-variant" data-alt="A professional headshot of a female dietitian smiling softly, with neutral lighting against a clean white background, conveying trust and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3lf38qLpJjjQQZVpqXB5CV1vaZyIjdCljOhztU4O2AgSkn1r-V1-JU27CU9K4RmkYXskXbVtmt4u9VNV2aeSxYbvJGKw3DGA7LUbEiSBoAuTmyWlp2BYO3bIROPB5L64gYjSw5ufi9IflkjUNzbPrYF5hOVTz0uAe0R8Vk0pXOeABuKIfDTmUQZzos0_Qa0f-GML6tABp_c6tj7wQL6k5uhOexta-bVM9LA7bMiQDKp8omesdAmQU"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Elif Nur</p>
+<p class="font-label-sm text-label-sm text-secondary">Uzman Diyetisyen</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col w-full max-w-container-max mx-auto overflow-y-auto">
+<!-- Mobile Top Nav (Hidden on md) -->
+<header class="md:hidden flex items-center justify-between p-margin-mobile border-b border-outline-variant bg-surface sticky top-0 z-30">
+<h1 class="font-headline-md text-headline-md text-primary">DietHub</h1>
+<button class="p-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="p-margin-mobile md:p-xl space-y-xl">
+<!-- Page Header -->
+<header>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Topluluk Yönetimi</h2>
+<p class="font-body-md text-body-md text-secondary">Kamplarınızdaki danışan paylaşımlarını ve etkileşimleri yönetin.</p>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-outline-variant/30 flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Toplam Gönderi</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-auto">156</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-outline-variant/30 flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Bugünkü Gönderiler</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-auto">12</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-outline-variant/30 flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-error-container/20 rounded-bl-full"></div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Bekleyen İnceleme</span>
+<span class="font-headline-lg text-headline-lg text-error mt-auto flex items-center gap-2">4 <span class="material-symbols-outlined text-sm">warning</span></span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-outline-variant/30 flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Aktif Kamp</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-auto">3</span>
+</div>
+</section>
+<!-- Content Area: Filters & List -->
+<section class="space-y-md">
+<!-- Filters Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-sm md:p-md soft-shadow border border-outline-variant/30 flex flex-col lg:flex-row gap-sm items-center justify-between">
+<div class="w-full lg:w-auto relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="w-full pl-xl pr-sm py-sm bg-secondary-fixed rounded-lg border-none focus:ring-1 focus:ring-primary-container focus:bg-surface-container-lowest transition-colors font-body-md text-on-surface" placeholder="Danışan veya içerik ara..." type="text"/>
+</div>
+<div class="flex flex-wrap lg:flex-nowrap gap-sm w-full lg:w-auto">
+<select class="bg-secondary-fixed border-none rounded-lg py-sm pl-sm pr-lg text-on-surface font-label-md focus:ring-1 focus:ring-primary-container">
+<option>Tüm Kamplar</option>
+<option>21 Günlük Arınma</option>
+<option>Yaz Fit Kampı</option>
+</select>
+<select class="bg-secondary-fixed border-none rounded-lg py-sm pl-sm pr-lg text-on-surface font-label-md focus:ring-1 focus:ring-primary-container">
+<option>Tüm Türler</option>
+<option>Fotoğraf</option>
+<option>Check-in</option>
+<option>Günlük</option>
+</select>
+<button class="bg-secondary-fixed text-on-surface rounded-lg px-md py-sm font-label-md flex items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            Diğer Filtreler
+                        </button>
+</div>
+</div>
+<!-- Feed List -->
+<div class="space-y-sm">
+<!-- Post Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-outline-variant/30 flex flex-col md:flex-row gap-md items-start md:items-center hover:bg-surface-bright transition-colors group cursor-pointer">
+<!-- User Info & Avatar -->
+<div class="flex items-center gap-sm shrink-0 w-full md:w-48">
+<img alt="Ayşe Yılmaz" class="w-12 h-12 rounded-full object-cover bg-surface-variant shrink-0" data-alt="A candid profile photo of a young woman smiling brightly, outdoor lighting, warm tones, suggesting a healthy lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALo7FHrzwXOpNxEq6moZFAZbZl7nvr1M_IinRdCTCtIGyOzxr_logXI-YU5irdnr2kYoUquiiFnIZcmP8czBawhh8x-v1EZMuOqmVot1PU2Q4xwF0v1zTl3VT0xQzNm1y6_a7y1lSeegnA66Tqpzhf6_vZQwqS9Cwq36tahoEsxdwyzPd3MWzDscYab2PDnoWF4OSwDNXIdiaF9t2wGEaTU-5vB93kRky6u2qyFRfOEqPhe9rd4Xce"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate font-semibold">Ayşe Yılmaz</p>
+<p class="font-label-sm text-label-sm text-secondary truncate">Bugün, 10:45</p>
+</div>
+</div>
+<!-- Content Preview -->
+<div class="flex-1 min-w-0 flex flex-col md:flex-row gap-sm items-start md:items-center w-full">
+<div class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> Fotoğraf
+                            </div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-primary-container mb-1">21 Günlük Beslenme Kampı</p>
+<p class="font-body-md text-body-md text-on-surface truncate">Bugünkü kahvaltım harikaydı! @diyetisyenelifnur</p>
+</div>
+<!-- Thumbnail -->
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 hidden md:block">
+<img alt="Kahvaltı Görseli" class="w-full h-full object-cover" data-alt="A beautifully plated healthy breakfast featuring avocado toast with a poached egg, cherry tomatoes, and microgreens on a ceramic plate, soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYJDrV1LoJIMUIlGTU813A1tA0a3R8GpMNastAdXamgOHfqNqz3tfXmFUg3H0Hd6J9uLv3H16fpUtoTUDaUXaaaYSQeASjtzLIRIx88iVcjcrjojQxI6-ggIeRrLaH-SUeZpH-iaBH7hmz7uBozrRFlMwaWv0DFRf5jONPxgsQwRq6Gk7S1JL6vxbmcPSZm7-CC7_RDzFc1VbbfgI-Vw0xjZh58TU4Tjlma9FOGco4_Ei6bYK8Wz0d"/>
+</div>
+</div>
+<!-- Meta & Actions -->
+<div class="flex items-center justify-between w-full md:w-auto gap-md shrink-0 border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant/30">
+<div class="flex items-center gap-sm text-secondary font-label-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 12</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-[#E8F2EC] text-primary-container px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Yayında
+                                </span>
+<button class="p-2 text-secondary hover:text-primary-container hover:bg-surface-container-high rounded-full transition-colors opacity-100 md:opacity-0 md:group-hover:opacity-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Item 2 (Needs Review) -->
+<div class="bg-surface-container-lowest rounded-xl p-md soft-shadow border border-error-container flex flex-col md:flex-row gap-md items-start md:items-center hover:bg-surface-bright transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<!-- User Info & Avatar -->
+<div class="flex items-center gap-sm shrink-0 w-full md:w-48 pl-2">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0 text-secondary font-headline-md">CB</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate font-semibold">Caner Başaran</p>
+<p class="font-label-sm text-label-sm text-secondary truncate">Dün, 18:20</p>
+</div>
+</div>
+<!-- Content Preview -->
+<div class="flex-1 min-w-0 flex flex-col md:flex-row gap-sm items-start md:items-center w-full">
+<div class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">checklist</span> Check-in
+                            </div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-primary-container mb-1">Yaz Fit Kampı</p>
+<p class="font-body-md text-body-md text-on-surface truncate">Su tüketimi hedefimi bugün tamamlayamadım, yarın telafi edeceğim.</p>
+</div>
+</div>
+<!-- Meta & Actions -->
+<div class="flex items-center justify-between w-full md:w-auto gap-md shrink-0 border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant/30">
+<div class="flex items-center gap-sm text-secondary font-label-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 0</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 0</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-error-container/50 text-on-error-container px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> İnceleniyor
+                                </span>
+<button class="bg-surface-container-high text-on-surface px-3 py-1.5 rounded font-label-sm hover:bg-surface-variant transition-colors">Yönet</button>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="flex justify-center pt-md">
+<button class="text-primary-container font-label-md flex items-center gap-2 hover:bg-secondary-fixed px-4 py-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+                            Daha Fazla Yükle
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

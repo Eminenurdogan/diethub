@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danışanlar Listesi - DietHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fbf9f8",
+                        "secondary-container": "#e7e2d8",
+                        "outline": "#727973",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary": "#163827",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#615e57",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#67645c",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "primary-container": "#2d4f3d",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "on-tertiary-container": "#afb9b4",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#436652",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c8c1",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed": "#c5ecd3",
+                        "inverse-primary": "#a9cfb8",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#414a46",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#9ac0a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit", "sans-serif"],
+                        "headline-md": ["Outfit", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "headline-lg": ["Outfit", "sans-serif"],
+                        "headline-lg-mobile": ["Outfit", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface dark:bg-surface-dim fixed left-0 top-0 h-screen w-[280px] flex-col py-lg px-md z-40">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<span class="font-display-lg text-display-lg text-primary dark:text-primary-fixed">DietHub</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest px-sm mb-sm">Professional Suite</span>
+<ul class="flex flex-col gap-xs flex-1">
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary dark:text-primary-fixed dark:border-primary-fixed bg-secondary-container/50 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+                    Clients
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                    Camps
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+                    Recipes
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    Messages
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+                    Check-ins
+                </a>
+</li>
+</ul>
+<div class="mt-auto flex flex-col gap-sm border-t border-surface-variant pt-md">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                Notifications
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<button class="mt-sm w-full bg-primary-container text-on-primary font-label-md text-label-md py-sm px-md rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add New Client
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[280px] w-full min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-bright dark:bg-surface flex justify-between items-center px-xl py-md sticky top-0 z-30 transition-shadow duration-200" id="topAppBar">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-primary md:block hidden">Danışanlar</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:hidden block">Danışanlar</h1>
+<span class="font-body-md text-body-md text-on-surface-variant">48 aktif danışanın</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-surface-variant cursor-pointer">
+<img alt="Dietitian profile" class="w-full h-full object-cover" data-alt="A highly detailed professional headshot of a dietitian in a bright, modern, minimalist clinical setting. Soft, diffused lighting accentuates a calm and empathetic expression. The background features warm off-white tones and subtle greenery, conveying a serene and structured wellness environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnTUN1dVVH_L16tV5eR8hdlKYJqIf3iJoklwNuMgYnv6B-BDnmR_scj8raLWB7HgGzrPGv0rfpFr-iaHWjQZYRZ1IOiNcGe3V-R6DNXwBlGCaOjAQWzmE4nHhAqcMlsGiNnERcQXUNBMnnvfAWah9bxe5gQrEaCpPycG5oXIPYZQSyewtNUBCUaWheOO6Gtxs7D7KMO7TDDToWnnjP_ccjxrvzBpIG_Kp3sSiVr267ES2XZiuKiJ8K"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin-mobile md:p-xl flex-1 flex flex-col gap-lg max-w-container-max mx-auto w-full">
+<!-- Toolbar: Search & Filters -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-md">
+<!-- Search -->
+<div class="relative w-full lg:w-96">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-secondary z-10" data-icon="search">search</span>
+<input class="w-full pl-xl pr-sm py-sm min-h-[48px] bg-secondary-container/30 border-transparent rounded-lg font-body-md text-on-surface placeholder:text-secondary focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all duration-200" placeholder="Danışan ara..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-sm overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto hide-scrollbar">
+<button class="whitespace-nowrap px-md py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-colors">Tümü</button>
+<button class="whitespace-nowrap px-md py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-secondary-container/50 font-label-md text-label-md transition-colors">Aktif</button>
+<button class="whitespace-nowrap px-md py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-secondary-container/50 font-label-md text-label-md transition-colors">Yeni</button>
+<button class="whitespace-nowrap px-md py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant hover:bg-secondary-container/50 font-label-md text-label-md transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="assignment_late">assignment_late</span> Check-in Bekleyen
+                    </button>
+</div>
+</div>
+<!-- Client List (Bento/Card Grid for better visual hierarchy than simple table) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-md">
+<!-- Client Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md flex flex-col gap-md transition-all duration-300 hover:shadow-[0_4px_20px_rgba(45,79,61,0.05)] border border-transparent hover:border-surface-variant">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-md">AY</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ayşe Yılmaz</h3>
+<p class="font-label-md text-label-md text-secondary mt-xs">21 Günlük Beslenme Kampı</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-xs px-sm py-1 rounded-full bg-primary-fixed-dim/30 text-primary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                            Aktif
+                        </span>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between font-label-sm text-label-sm text-secondary">
+<span>İlerleme: Gün 15/21</span>
+<span>71%</span>
+</div>
+<div class="h-1.5 w-full bg-[#E8F2EC] rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-sm border-t border-surface-variant/50">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                            Son Check-in: Bugün yaptı
+                        </div>
+<button class="px-md py-2 rounded-lg bg-surface-container hover:bg-secondary-container text-primary font-label-md text-label-md transition-colors">
+                            Detay
+                        </button>
+</div>
+</div>
+<!-- Client Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md flex flex-col gap-md transition-all duration-300 hover:shadow-[0_4px_20px_rgba(45,79,61,0.05)] border border-transparent hover:border-surface-variant">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-md">ZK</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Zeynep Kaya</h3>
+<p class="font-label-md text-label-md text-secondary mt-xs">Detoks Kampı</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-xs px-sm py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                            Beklemede
+                        </span>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between font-label-sm text-label-sm text-secondary">
+<span>İlerleme: Gün 3/7</span>
+<span>42%</span>
+</div>
+<div class="h-1.5 w-full bg-[#E8F2EC] rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full opacity-70" style="width: 42%;"></div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-sm border-t border-surface-variant/50">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+                            Son Check-in: Dün yaptı
+                        </div>
+<button class="px-md py-2 rounded-lg bg-surface-container hover:bg-secondary-container text-primary font-label-md text-label-md transition-colors">
+                            Detay
+                        </button>
+</div>
+</div>
+<!-- Empty State/Add New Call to Action (Design detail) -->
+<div class="bg-transparent border-2 border-dashed border-outline-variant rounded-xl p-md flex flex-col items-center justify-center gap-sm text-center min-h-[220px] hover:border-primary-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary group-hover:bg-primary-fixed group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Yeni Danışan Ekle</h3>
+<p class="font-body-md text-body-md text-secondary max-w-[250px]">Sisteme yeni bir danışan kaydedin veya davet bağlantısı gönderin.</p>
+</div>
+</div>
+</div>
+</main>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script>
+        // Simple scroll shadow effect for TopAppBar
+        const topAppBar = document.getElementById('topAppBar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                topAppBar.classList.add('shadow-[0_4px_20px_rgba(45,79,61,0.05)]');
+            } else {
+                topAppBar.classList.remove('shadow-[0_4px_20px_rgba(45,79,61,0.05)]');
+            }
+        });
+    </script>
+</body></html>

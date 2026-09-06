@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Tariflerim</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#fbf9f8",
+                        "secondary-container": "#e7e2d8",
+                        "outline": "#727973",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary": "#163827",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary": "#615e57",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#67645c",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "primary-container": "#2d4f3d",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-surface-variant": "#414843",
+                        "on-tertiary-container": "#afb9b4",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#436652",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c8c1",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "primary-fixed": "#c5ecd3",
+                        "inverse-primary": "#a9cfb8",
+                        "surface-variant": "#e4e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#414a46",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#9ac0a9"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display, .font-headline { font-family: 'Outfit', sans-serif; }
+        
+        /* Minimalist Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dcd9d9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cac6bd; }
+
+        /* Hollow Input Focus Effect */
+        .input-hollow {
+            background-color: #f0eded; /* surface-container */
+            border: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+        .input-hollow:focus-within {
+            background-color: #ffffff;
+            border-color: #2d4f3d; /* primary-container */
+            box-shadow: 0 0 0 1px #2d4f3d;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface antialiased min-h-screen flex">
+<!-- Shared Component: SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[280px] bg-surface flex flex-col py-lg px-md border-r border-outline-variant/20 z-20">
+<div class="mb-xl flex items-center px-sm">
+<div class="h-10 w-10 bg-primary-container rounded-lg flex items-center justify-center mr-sm">
+<span class="material-symbols-outlined text-on-primary font-bold">nutrition</span>
+</div>
+<div>
+<h1 class="font-display-lg text-[24px] leading-tight text-primary font-semibold tracking-tight">DietHub</h1>
+<p class="font-label-sm text-label-sm text-secondary">Professional Suite</p>
+</div>
+</div>
+<div class="mb-lg">
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-sm px-md rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Client
+            </button>
+</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<!-- Inactive -->
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span>Overview</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">group</span>Clients</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span>Camps</a></li>
+<!-- Active: Recipes -->
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>Recipes</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">chat</span>Messages</a></li>
+<li><a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>Check-ins</a></li>
+</ul>
+<div class="mt-auto flex flex-col gap-sm border-t border-outline-variant/20 pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span>Notifications</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary hover:bg-secondary-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="ml-[280px] w-[calc(100%-280px)] min-h-screen flex flex-col relative">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 z-10 flex justify-between items-center ml-[280px] px-xl py-md w-[calc(100%-280px)] bg-surface-bright/80 backdrop-blur-md">
+<!-- Search omitted here as per JSON search_bar: "on_left" meaning it might be just space, but prompt wants search in the main content area, so I'll keep app bar clean with just actions -->
+<div class="flex-1"></div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 px-xl pt-[100px] pb-xl max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Tariflerim</h2>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md py-[10px] px-md rounded-lg hover:bg-primary transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Yeni Tarif
+                </button>
+</div>
+<!-- Filters & Search Section -->
+<div class="flex flex-col md:flex-row gap-md mb-xl">
+<!-- Search -->
+<div class="input-hollow flex items-center px-md py-[10px] rounded-lg w-full md:w-80">
+<span class="material-symbols-outlined text-secondary mr-sm text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder:text-secondary-fixed-dim outline-none text-on-surface" placeholder="Tarif ara..." type="text"/>
+</div>
+<!-- Categories -->
+<div class="flex items-center gap-sm overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-colors">Tümü</button>
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-secondary-container transition-colors">Kahvaltı</button>
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-secondary-container transition-colors">Öğle</button>
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-secondary-container transition-colors">Akşam</button>
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-secondary-container transition-colors">Ara Öğün</button>
+<button class="whitespace-nowrap px-md py-[8px] rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-secondary-container transition-colors">İçecek</button>
+</div>
+</div>
+<!-- Recipe Grid (Bento style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Card 1: Badem Unlu Pankek -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border border-outline-variant/30 overflow-hidden flex flex-col group hover:shadow-[0px_8px_30px_rgba(45,79,61,0.08)] transition-all duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A high-end, top-down food photography shot of golden almond flour pancakes stacked on a minimalist white ceramic plate. The setting is bright and airy, flooded with soft, natural morning light creating a clean, modern light-mode aesthetic. A drizzle of organic maple syrup and a few fresh blueberries add subtle contrast. The background is a crisp white marble surface, reinforcing a premium, clinical minimalist wellness vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBNxHqNuvOEL9jK4kzHx1S0rXVqVZjjSJzsKpxyPv3qHnvA6hXU_aRg-jtB5nIhZDTn48jau4pFfNf_KIjiEHIfdnmdIr7ktrnsr0flPV-8qsFDf5pMZMBq4OPlzMGuhxGsn_1Vr8NMQUemvRHMcHa1OYRlMpJUNSltRHKLw_9FpPhTT6Y1sGkle_ZSbEuhXVA4-5Ej-p3gpn3Ssn9kDnKEVCl01DzZpfykNzTaRYoaMd8jbaaLlaG"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest/90 backdrop-blur-sm px-sm py-[4px] rounded text-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">sunny</span> Kahvaltı
+                        </div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold group-hover:text-primary transition-colors">Badem Unlu Pankek</h3>
+<button class="text-secondary hover:text-primary-container transition-colors flex-shrink-0" title="Düzenle">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-md text-secondary font-body-md text-[14px] mb-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 10 dk</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">local_fire_department</span> 320 kcal</span>
+</div>
+<div class="mt-md pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+<span>3 kampta kullanılıyor</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Izgara Somon -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)] border border-outline-variant/30 overflow-hidden flex flex-col group hover:shadow-[0px_8px_30px_rgba(45,79,61,0.08)] transition-all duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A professional, stylized culinary photo of a perfectly grilled salmon fillet resting on a bed of vibrant green asparagus. The composition is plated on a matte off-white dish against a pristine, minimalist surface. High-key, diffused lighting highlights the texture of the fish and the fresh greens, fitting a premium dietary clinical aesthetic. The overall mood is healthy, precise, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_S2hpURsTbvZKN_CP0fFW53i3hGhxYaqBI9MwO4RctZlkHQOvAKdQbTW7OQ6iQqPmQLWvLoer9emo5jzAeadJfcQOsBDQdBq1M9yiIidQ6B0zt42MN9c3OmNOS6h2pdKLk2C5ZeVZWUEsOeMWOmj3nNyW9BNwocChkO4_wrmvfWqZ6jliD5ubHwDZ-iBdgAzpVb4w9lhU9_DxNKGWUoHYRiER-pJF5gILviMtV8kk3sUJh3xJR3h8"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest/90 backdrop-blur-sm px-sm py-[4px] rounded text-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">nightlight_round</span> Akşam
+                        </div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold group-hover:text-primary transition-colors">Izgara Somon</h3>
+<button class="text-secondary hover:text-primary-container transition-colors flex-shrink-0" title="Düzenle">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-md text-secondary font-body-md text-[14px] mb-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 25 dk</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">local_fire_department</span> 410 kcal</span>
+</div>
+<div class="mt-md pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+<span>5 kampta kullanılıyor</span>
+</div>
+</div>
+</div>
+<!-- Add New Placeholder Card for Grid Aesthetic -->
+<div class="bg-surface-container-lowest/50 rounded-xl border-2 border-dashed border-outline-variant/50 overflow-hidden flex flex-col items-center justify-center p-xl cursor-pointer hover:bg-surface-container-lowest hover:border-primary-container/50 transition-colors group">
+<div class="h-16 w-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-secondary group-hover:text-primary-container">add_circle</span>
+</div>
+<p class="font-label-md text-label-md text-secondary group-hover:text-primary-container">Yeni Tarif Oluştur</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

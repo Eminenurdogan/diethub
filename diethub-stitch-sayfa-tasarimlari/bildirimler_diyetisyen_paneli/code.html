@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Bildirimler</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#afb9b4",
+                        "outline": "#727973",
+                        "secondary-fixed": "#e7e2d8",
+                        "surface": "#fbf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary": "#615e57",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#2a3430",
+                        "on-secondary-fixed": "#1d1c16",
+                        "on-tertiary-fixed": "#151d1a",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#9ac0a9",
+                        "secondary-container": "#e7e2d8",
+                        "tertiary-container": "#414a46",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#a9cfb8",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#436652",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "surface-container-high": "#eae8e7",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary-fixed": "#dbe5df",
+                        "on-surface-variant": "#414843",
+                        "primary-fixed": "#c5ecd3",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "surface-container": "#f0eded",
+                        "primary": "#163827",
+                        "surface-bright": "#fbf9f8",
+                        "primary-container": "#2d4f3d",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-primary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "outline-variant": "#c1c8c1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#67645c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-shadow-card {
+            box-shadow: 0px 4px 20px rgba(45, 79, 61, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-lg px-md fixed left-0 top-0 h-screen w-[280px] bg-surface dark:bg-surface-dim flat no shadows z-40">
+<div class="mb-xl flex items-center gap-sm px-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+<div>
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed text-3xl">DietHub</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Professional Suite</p>
+</div>
+</div>
+<ul class="flex-1 space-y-2">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Clients
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                    Camps
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+                    Recipes
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    Messages
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+                    Check-ins
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface dark:bg-surface-dim text-primary font-bold border-r-4 border-primary dark:text-primary-fixed dark:border-primary-fixed duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+                    Notifications
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-secondary-container dark:hover:bg-secondary transition-colors duration-200 ease-in-out font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-lg">
+<button class="w-full bg-primary-container text-on-primary py-sm px-md rounded-lg font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">add</span>
+                Add New Client
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-[280px] min-h-screen flex flex-col w-full max-w-container-max mx-auto">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-xl py-md w-full bg-surface-bright dark:bg-surface flat no shadows sticky top-0 z-30">
+<div class="flex-1"></div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 px-margin-mobile md:px-xl py-lg space-y-xl">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Bildirimler</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Sizin için önemli olan gelişmeleri buradan takip edin.</p>
+</div>
+<button class="bg-secondary-container text-primary-container px-md py-sm rounded-full font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-xs w-fit">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+                    Tümünü Okundu İşaretle
+                </button>
+</div>
+<!-- Content Area: Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Notifications List -->
+<div class="lg:col-span-8 space-y-md">
+<!-- Filters -->
+<div class="flex overflow-x-auto pb-2 gap-sm hide-scrollbar border-b border-surface-variant">
+<button class="px-md py-xs font-label-md text-label-md text-primary border-b-2 border-primary whitespace-nowrap">Tümü</button>
+<button class="px-md py-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Danışanlar</button>
+<button class="px-md py-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Check-inler</button>
+<button class="px-md py-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Mesajlar</button>
+<button class="px-md py-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Kamplar</button>
+<button class="px-md py-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Sistem</button>
+</div>
+<!-- List -->
+<div class="space-y-sm">
+<!-- Unread Notification -->
+<div class="bg-surface-container-lowest custom-shadow-card rounded-xl p-md flex gap-md items-start relative overflow-hidden border-l-4 border-primary bg-[#F2F8F4]">
+<div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-primary"></div>
+<div class="bg-primary-container text-on-primary w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-headline-md text-[18px] leading-snug text-on-surface">Yeni check-in geldi</h4>
+<span class="font-label-sm text-label-sm text-primary shrink-0">10 dk önce</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Ayşe Yılmaz bugün check-in gönderdi.</p>
+<button class="mt-sm text-primary font-label-md text-label-md hover:underline flex items-center gap-xs">
+                                    Görüntüle <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Read Notification -->
+<div class="bg-surface-container-lowest custom-shadow-card rounded-xl p-md flex gap-md items-start">
+<div class="bg-surface-container-high text-on-surface-variant w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-label-md text-[16px] text-on-surface">Yeni mesaj</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">1 saat önce</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Mehmet Demir size yeni bir mesaj gönderdi.</p>
+</div>
+</div>
+<!-- Read Notification -->
+<div class="bg-surface-container-lowest custom-shadow-card rounded-xl p-md flex gap-md items-start">
+<div class="bg-surface-container-high text-on-surface-variant w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-label-md text-[16px] text-on-surface">Yeni danışan</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">Dün, 14:30</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Elif Kaya kampınıza katıldı.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Preferences Sidebar -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest custom-shadow-card rounded-xl p-md sticky top-[100px]">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h3 class="font-headline-md text-[20px] text-primary">Bildirim Tercihleri</h3>
+</div>
+<div class="space-y-md">
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chat</span>
+<span class="font-label-md text-label-md text-on-surface">Yeni mesaj</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-primary-container outline-none focus:outline-none ring-0 border-surface-variant" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-container-highest cursor-pointer" for="toggle1"></label>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">assignment_turned_in</span>
+<span class="font-label-md text-label-md text-on-surface">Check-in</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-primary-container outline-none focus:outline-none ring-0 border-surface-variant" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-container-highest cursor-pointer" for="toggle2"></label>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">group</span>
+<span class="font-label-md text-label-md text-on-surface">Yeni danışan</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-primary-container outline-none focus:outline-none ring-0 border-surface-variant" id="toggle3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-container-highest cursor-pointer" for="toggle3"></label>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Custom Toggle Switch styling for Tailwind */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2d4f3d; /* primary-container */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2d4f3d; /* primary-container */
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #e4e2e1;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            transition: all 0.3s;
+        }
+        .toggle-checkbox:not(:checked) {
+            right: 20px;
+        }
+    </style>
+</body></html>

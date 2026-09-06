@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DietHub - Kamp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e1",
+                        "outline-variant": "#c1c8c1",
+                        "surface-tint": "#436652",
+                        "secondary-container": "#e7e2d8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "background": "#fbf9f8",
+                        "primary": "#163827",
+                        "tertiary": "#2a3430",
+                        "on-tertiary-fixed-variant": "#3f4945",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-highest": "#e4e2e1",
+                        "inverse-primary": "#a9cfb8",
+                        "on-tertiary-container": "#afb9b4",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-background": "#1b1c1c",
+                        "surface-bright": "#fbf9f8",
+                        "surface": "#fbf9f8",
+                        "tertiary-container": "#414a46",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#e7e2d8",
+                        "primary-fixed-dim": "#a9cfb8",
+                        "on-secondary-fixed-variant": "#494740",
+                        "surface-container": "#f0eded",
+                        "on-surface-variant": "#414843",
+                        "on-primary-fixed": "#002113",
+                        "primary-container": "#2d4f3d",
+                        "on-primary-container": "#9ac0a9",
+                        "on-tertiary-fixed": "#151d1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1d1c16",
+                        "primary-fixed": "#c5ecd3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#67645c",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#615e57",
+                        "secondary-fixed-dim": "#cac6bd",
+                        "tertiary-fixed": "#dbe5df",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#2c4e3c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bfc9c3",
+                        "outline": "#727973"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "container-max": "1200px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 bg-background dark:bg-background z-40 sticky">
+<div class="flex flex-col justify-center px-margin-mobile pt-sm pb-xs w-full max-w-container-max mx-auto">
+<div class="flex items-center justify-between w-full pt-4 pb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional, well-lit portrait of a friendly user in a light, modern clinical environment. Bright, soft natural light reflecting a serene, premium atmosphere. A neutral off-white background ensuring the user's face is clearly visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo33cXkcpcf1mQfUeia4iSMVnkjs69yTRjDQpdIT6ZPUlwUC5aApD8iW3T1V9ZuzwPZq4wRj_LKbXbrTSxwKeLL186zgejGcVy-WnyRYSYF56EjHKVTzodIBKd6MYZibd4jrznXR6HI0ZVEoknxeT-kDaFYnLEmgPe7EMXeKTIy2SF7ST-kAosv9_4xMRX9Vg3iTijrxyTihr8pIsj3bFstW5S4JXaNCSq9LbvFIbhSp1d3zEqUNnk"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">Merhaba, Emine 👋</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface-variant hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<!-- Desktop Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center space-x-6 pt-4 pb-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">Ana Sayfa</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">Programım</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">Tarifler</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-body-md text-body-md" href="#">Kamp</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">Mesajlar</a>
+</nav>
+</div>
+</header>
+<!-- Main Content -->
+<main class="w-full max-w-container-max mx-auto px-margin-mobile py-md md:py-xl space-y-xl">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden bg-primary-container text-on-primary">
+<div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" data-alt="A serene, beautifully composed still life featuring fresh green vegetables, a modern reusable water bottle, and a sleek planner on a clean marble surface. Warm, soft natural sunlight streaming through a window, creating a tranquil, high-end wellness aesthetic. Deep greens and bright whites dominate the palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlxbhBiwroNUT245bRKMso4d7clWlfsSKGV8WJeevlLv4QpzlTKI1uVXB5zlY5FGceaXBZ6Zoy2qUh7tUzR_TYGuKWY6ekXEZJHBF0MRtDiWqizoc4d3yz-XjhGoVHjCaL2kiqKnTpJWCbv8tlox3eyWQtksWzHeRfaJD_O3qJOQ-Hy1q6h-SgRLdD0a4L1wmaaSFybcTCcQPk4sB3xCOMjjqJnvUuhTFRgygznF9XTNIiHvolr8dj')"></div>
+<div class="relative z-10 p-md md:p-lg flex flex-col items-start gap-4">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-surface-tint/20 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm uppercase">
+                    Aktif Kamp
+                </div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary">21 Günlük Beslenme Kampı</h2>
+<p class="font-body-md text-body-md text-on-primary-container max-w-2xl">
+                    Vücudunu arındır, enerjini yenile ve sağlıklı alışkanlıklar kazan. Bugün 7. gün, harika gidiyorsun!
+                </p>
+<div class="w-full max-w-md mt-4 space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-primary-container">
+<span>İlerleme: Gün 7/21</span>
+<span>33%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-primary overflow-hidden">
+<div class="h-full bg-on-primary rounded-full transition-all duration-1000 ease-out" style="width: 33%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Modules -->
+<section class="space-y-sm">
+<h3 class="font-headline-md text-headline-md text-primary">Günlük Modüller</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+<!-- Completed Module -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex items-center gap-4 opacity-70">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-weight="fill">check_circle</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Gün 6: Detoks Suları</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Tamamlandı</p>
+</div>
+</div>
+<!-- Current Module -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)] flex items-center gap-4 border border-primary-container">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-lg">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary">Gün 7: Sağlıklı Yağlar</h4>
+<p class="font-body-md text-body-md text-primary-container text-sm mt-1">Bugünün Odak Noktası</p>
+</div>
+</div>
+<!-- Upcoming Module -->
+<div class="bg-surface-container-low p-md rounded-xl flex items-center gap-4 border border-dashed border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-outline-variant shrink-0">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">Gün 8: Lif Tüketimi</h4>
+<p class="font-body-md text-body-md text-outline text-sm mt-1">Yarın açılacak</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Announcements -->
+<section class="space-y-sm">
+<h3 class="font-headline-md text-headline-md text-primary">Duyurular &amp; Motivasyon</h3>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(45,79,61,0.05)]">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0 mt-1">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md text-on-surface">Canlı Soru &amp; Cevap Seansı</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 saat önce</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Sevgili kamp üyeleri, bu akşam saat 20:00'da diyetisyenimiz ile haftalık değerlendirme ve soru-cevap seansımız olacaktır. Link mail adreslerinize gönderildi. Katılımınızı bekliyoruz!
+                        </p>
+<button class="mt-2 px-4 py-2 bg-secondary-container text-primary font-label-md text-label-md rounded-lg hover:bg-surface-tint hover:text-on-primary transition-colors">
+                            Detayları Gör
+                        </button>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant my-4"></div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 mt-1">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<div class="space-y-1">
+<p class="font-body-md text-body-md text-primary italic">
+                            "Başarı, her gün tekrarlanan küçük çabaların toplamıdır."
+                        </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">- Günün Sözü</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Camp Mates -->
+<section class="space-y-sm overflow-hidden">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary">Kamp Arkadaşları</h3>
+<button class="font-label-sm text-label-sm text-primary hover:underline">Tümünü Gör</button>
+</div>
+<div class="flex overflow-x-auto hide-scroll gap-4 pb-4">
+<div class="flex flex-col items-center gap-2 min-w-[80px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container p-0.5">
+<img class="w-full h-full rounded-full object-cover" data-alt="A close-up portrait of a cheerful person outdoors. Bright, natural lighting with a soft depth of field blurring out green foliage in the background. Modern wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDafoh6RnSdZXTu6vJdPxp0W9wR-rD-7budbWUQd9Wihg3Tv-1abdL_YSOGhBSpM0nzH79BZkBMFZsCh_fBt0LaIFmoRdD-qalFEBuhbmSu-oG_x_PdlkBBSB-bm6kKLlpSQ3G_6EyMdl5OnxLY3upFikdA0UYW-Ot85ivZl4_94evrG2ZqFmtEpxFQs_fceOzasNX1pYIPxl43fTWd-vpESE81r5K2CssWMF1S5GB8SgSzmvxTLIdw"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Ayşe T.</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[80px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent">
+<img class="w-full h-full rounded-full object-cover" data-alt="A professional headshot of a smiling man in casual attire. Clean, well-lit studio environment with a light, warm background reflecting a serene, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpATEco15rqUrA9YH57fGqeCzk7k7gIYZ1UhPqzInsdq3-0pV4q0ta5Lv4pygn7zd5ykD4DgYl9fxFGPi3HDg7M6Va3C5q2LCwRUs1wz0HNeMISslwPcb20sZWWgI3rbRkydsF8KgrYWp5TdZaDcckhnRHTPtHHGlC_HG2VfWlWtXMbwwNbh8nCjExuNSGpnKKBG7L6zydEDajkx2f4lr4vaI5i27UTEvhxLiMvIkr-VYNK9VV9bz-"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Can K.</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[80px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent">
+<img class="w-full h-full rounded-full object-cover" data-alt="A candid portrait of a woman looking relaxed and happy, holding a cup of tea. Soft morning light, cozy modern interior setting. Serene and calm mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpQ31Y6aFskxEFJPATdJ8b7DtBkpq_ZbLFSBnC3Nj2uUEbayf5znVFQRO4zH4QzWr2S_WQnpl4T32tOv9xpgbCSCpEqs7A9Sy5ZdnN3i8ZbOCho5WSnaLz-EVVOOG326g9VhDHXQzimNcFlyBvWePZqGWjMa3A5CfTI_agnLa-_nKNHc_8qP8MOKcBSggLoFp1BZEPjwZWEWmdkkilbr75a7a-U683X2yFN3K0BcPFJQhGcNTO-xr1"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Merve Y.</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[80px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent">
+<div class="w-full h-full rounded-full bg-secondary-container flex items-center justify-center text-primary font-headline-md text-headline-md">
+                            B
+                        </div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Burak O.</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(45,79,61,0.05)] rounded-t-xl pb-safe">
+<!-- Inactive: Ana Sayfa -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Ana Sayfa</span>
+</a>
+<!-- Inactive: Programım -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-sm text-label-sm">Programım</span>
+</a>
+<!-- Inactive: Tarifler -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="font-label-sm text-label-sm">Tarifler</span>
+</a>
+<!-- Active: Kamp -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-semibold hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill">video_file</span>
+<span class="font-label-sm text-label-sm">Kamp</span>
+</a>
+<!-- Inactive: Mesajlar -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-outline-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Mesajlar</span>
+</a>
+</nav>
+</body></html>

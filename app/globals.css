@@ -114,15 +114,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; }
 
-.dh-heading { color: var(--dh-primary); font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.02em; }
-.dh-card { background: var(--dh-surface-container-lowest); border: 1px solid rgba(22, 56, 39, .035); border-radius: 24px; box-shadow: 0 4px 20px rgba(45, 79, 61, .05); }
-.dh-card-elevated { background: var(--dh-surface-container-lowest); border-radius: 24px; box-shadow: 0px 12px 40px rgba(0, 0, 0, .08); }
-.dh-input, .dh-textarea, .dh-select { width: 100%; border: 1px solid transparent; border-radius: 12px; background: #f3f0ea; color: var(--dh-ink); outline: none; padding: 13px 14px; transition: border-color .16s ease, background-color .16s ease; }
-.dh-textarea { min-height: 112px; resize: vertical; }
-.dh-input:focus, .dh-textarea:focus, .dh-select:focus { background: white; border-color: var(--dh-primary); }
-.dh-input::placeholder, .dh-textarea::placeholder { color: #8b8c87; }
-.dh-focus:focus-visible { outline: 2px solid var(--dh-primary); outline-offset: 3px; }
-.dh-scrollbar::-webkit-scrollbar { width: 7px; height: 7px; }
-.dh-scrollbar::-webkit-scrollbar-thumb { background: #d9d7d2; border-radius: 20px; }
+/* @layer components: Tailwind utility class'ları (örn. pl-12) bu katmandaki kuralları
+   kaynak sırasından bağımsız olarak ezebilsin diye — aksi halde örn. .dh-input'un
+   padding'i her zaman kazanır ve ikon+input gibi kombinasyonlar bozulur. */
+@layer components {
+  .dh-heading { color: var(--dh-primary); font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.02em; }
+  .dh-card { background: var(--dh-surface-container-lowest); border: 1px solid rgba(22, 56, 39, .035); border-radius: 24px; box-shadow: 0 4px 20px rgba(45, 79, 61, .05); }
+  .dh-card-elevated { background: var(--dh-surface-container-lowest); border-radius: 24px; box-shadow: 0px 12px 40px rgba(0, 0, 0, .08); }
+  .dh-input, .dh-textarea, .dh-select { width: 100%; border: 1px solid transparent; border-radius: 12px; background: #f3f0ea; color: var(--dh-ink); outline: none; padding: 13px 14px; transition: border-color .16s ease, background-color .16s ease; }
+  .dh-textarea { min-height: 112px; resize: vertical; }
+  .dh-input:focus, .dh-textarea:focus, .dh-select:focus { background: white; border-color: var(--dh-primary); }
+  .dh-input::placeholder, .dh-textarea::placeholder { color: #8b8c87; }
+  .dh-focus:focus-visible { outline: 2px solid var(--dh-primary); outline-offset: 3px; }
+  .dh-scrollbar::-webkit-scrollbar { width: 7px; height: 7px; }
+  .dh-scrollbar::-webkit-scrollbar-thumb { background: #d9d7d2; border-radius: 20px; }
+}
 
 @media (max-width: 767px) { body { font-size: 14px; } }

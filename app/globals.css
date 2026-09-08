@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Stitch M3 token palette — bkz. diethub-stitch-sayfa-tasarimlari/zenith_health_narrative/DESIGN.md */
+  --dh-surface-bright: #fbf9f8;
+  --dh-secondary-container: #e7e2d8;
+  --dh-outline: #727973;
+  --dh-on-secondary-fixed-variant: #494740;
+  --dh-on-error: #ffffff;
+  --dh-surface: #fbf9f8;
+  --dh-secondary-fixed-dim: #cac6bd;
+  --dh-on-tertiary: #ffffff;
+  --dh-surface-dim: #dcd9d9;
+  --dh-on-primary: #ffffff;
+  --dh-surface-container: #f0eded;
+  --dh-error: #ba1a1a;
+  --dh-on-surface: #1b1c1c;
+  --dh-on-secondary: #ffffff;
+  --dh-primary: #163827;
+  --dh-surface-container-highest: #e4e2e1;
+  --dh-secondary: #615e57;
+  --dh-surface-container-high: #eae8e7;
+  --dh-surface-container-lowest: #ffffff;
+  --dh-on-secondary-container: #67645c;
+  --dh-tertiary-fixed-dim: #bfc9c3;
+  --dh-primary-container: #2d4f3d;
+  --dh-secondary-fixed: #e7e2d8;
+  --dh-on-surface-variant: #414843;
+  --dh-on-tertiary-container: #afb9b4;
+  --dh-inverse-on-surface: #f3f0f0;
+  --dh-tertiary: #2a3430;
+  --dh-on-tertiary-fixed: #151d1a;
+  --dh-on-primary-fixed-variant: #2c4e3c;
+  --dh-on-tertiary-fixed-variant: #3f4945;
+  --dh-tertiary-fixed: #dbe5df;
+  --dh-on-primary-fixed: #002113;
+  --dh-surface-tint: #436652;
+  --dh-surface-container-low: #f6f3f2;
+  --dh-outline-variant: #c1c8c1;
+  --dh-inverse-surface: #303030;
+  --dh-error-container: #ffdad6;
+  --dh-background: #fbf9f8;
+  --dh-primary-fixed: #c5ecd3;
+  --dh-inverse-primary: #a9cfb8;
+  --dh-surface-variant: #e4e2e1;
+  --dh-on-background: #1b1c1c;
+  --dh-tertiary-container: #414a46;
+  --dh-on-secondary-fixed: #1d1c16;
+  --dh-primary-fixed-dim: #a9cfb8;
+  --dh-on-error-container: #93000a;
+  --dh-on-primary-container: #9ac0a9;
+
+  /* Kısa takma adlar (mevcut bileşenlerin kullandığı) */
+  --dh-bg: var(--dh-background);
+  --dh-ink: var(--dh-on-surface);
+  --dh-muted: var(--dh-on-surface-variant);
+  --dh-primary-soft: #e8f2ec;
+  --dh-beige: var(--dh-secondary-container);
+  --dh-border: var(--dh-surface-variant);
+  --dh-danger: var(--dh-error);
+
+  --font-heading: var(--font-outfit), "Outfit", ui-sans-serif, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface-bright: var(--dh-surface-bright);
+  --color-secondary-container: var(--dh-secondary-container);
+  --color-outline: var(--dh-outline);
+  --color-surface: var(--dh-surface);
+  --color-surface-dim: var(--dh-surface-dim);
+  --color-surface-container: var(--dh-surface-container);
+  --color-error: var(--dh-error);
+  --color-on-surface: var(--dh-on-surface);
+  --color-primary: var(--dh-primary);
+  --color-surface-container-highest: var(--dh-surface-container-highest);
+  --color-secondary: var(--dh-secondary);
+  --color-surface-container-high: var(--dh-surface-container-high);
+  --color-surface-container-lowest: var(--dh-surface-container-lowest);
+  --color-on-secondary-container: var(--dh-on-secondary-container);
+  --color-primary-container: var(--dh-primary-container);
+  --color-on-surface-variant: var(--dh-on-surface-variant);
+  --color-tertiary: var(--dh-tertiary);
+  --color-surface-tint: var(--dh-surface-tint);
+  --color-surface-container-low: var(--dh-surface-container-low);
+  --color-outline-variant: var(--dh-outline-variant);
+  --color-inverse-surface: var(--dh-inverse-surface);
+  --color-error-container: var(--dh-error-container);
+  --color-background: var(--dh-background);
+  --color-primary-fixed: var(--dh-primary-fixed);
+  --color-surface-variant: var(--dh-surface-variant);
+  --color-on-background: var(--dh-on-background);
+  --color-tertiary-container: var(--dh-tertiary-container);
+  --color-primary-fixed-dim: var(--dh-primary-fixed-dim);
+  --color-on-error-container: var(--dh-on-error-container);
+  --color-on-primary-container: var(--dh-on-primary-container);
+  --font-display: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
+html { min-height: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--dh-bg);
+  color: var(--dh-ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
 }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+
+.dh-heading { color: var(--dh-primary); font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.02em; }
+.dh-card { background: var(--dh-surface-container-lowest); border: 1px solid rgba(22, 56, 39, .035); border-radius: 24px; box-shadow: 0 4px 20px rgba(45, 79, 61, .05); }
+.dh-card-elevated { background: var(--dh-surface-container-lowest); border-radius: 24px; box-shadow: 0px 12px 40px rgba(0, 0, 0, .08); }
+.dh-input, .dh-textarea, .dh-select { width: 100%; border: 1px solid transparent; border-radius: 12px; background: #f3f0ea; color: var(--dh-ink); outline: none; padding: 13px 14px; transition: border-color .16s ease, background-color .16s ease; }
+.dh-textarea { min-height: 112px; resize: vertical; }
+.dh-input:focus, .dh-textarea:focus, .dh-select:focus { background: white; border-color: var(--dh-primary); }
+.dh-input::placeholder, .dh-textarea::placeholder { color: #8b8c87; }
+.dh-focus:focus-visible { outline: 2px solid var(--dh-primary); outline-offset: 3px; }
+.dh-scrollbar::-webkit-scrollbar { width: 7px; height: 7px; }
+.dh-scrollbar::-webkit-scrollbar-thumb { background: #d9d7d2; border-radius: 20px; }
+
+@media (max-width: 767px) { body { font-size: 14px; } }
